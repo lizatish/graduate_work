@@ -8,6 +8,7 @@ packages = [{include = "graduate_work"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+alembic = "^1.9.2"
 
 
 [build-system]
