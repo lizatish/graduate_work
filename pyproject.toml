@@ -1,15 +1,14 @@
 [tool.poetry]
-name = "graduate-work"
+name = "loyality-service"
 version = "0.1.0"
 description = ""
 authors = ["Liza Tishkovets, Oleg Rubtsov"]
 readme = "README.md"
-packages = [{include = "graduate_work"}]
+packages = [{ include = "loyality_service" }]
 
 [tool.poetry.dependencies]
 python = "^3.10"
 alembic = "^1.9.2"
-
 
 [build-system]
 requires = ["poetry-core"]
