@@ -1,9 +1,22 @@
 from http import HTTPStatus
+
 from fastapi import HTTPException
+
 from models.responses import StandardResponse
 
 
 class JsonService:
+    @staticmethod
+    def promocode_expired():
+        """Возвращает ответ пользователю, сообщающий о том, что время действия промокода истекло."""
+        raise HTTPException(HTTPStatus.GONE, detail='This promo code has expired')
+
+    @staticmethod
+    def promocode_in_invalid_status():
+        """Возвращает ответ пользователю, сообщающий об ошибке авторизации."""
+        raise HTTPException(HTTPStatus.BAD_REQUEST,
+                            detail='This promocode can\'t be used because has invalid status')
+
     @staticmethod
     def return_success_response(message: str) -> StandardResponse:
         """Возвращает ответ пользователю, сообщающий о выполнении успешной операции."""

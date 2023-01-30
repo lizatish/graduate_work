@@ -2,12 +2,11 @@ import asyncio
 from asyncio import AbstractEventLoop
 from typing import AsyncGenerator, Generator
 
-import pytest
 import pytest_asyncio
 from httpx import AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from models.db_models import PersonalPromocode, PromocodeHistory, BasePromocode, BaseDiscount, PersonalDiscount
+from models.db_models import PersonalPromocode, PromocodeHistory, BasePromocode, BaseDiscount, PersonalDiscount, Base
 from tests.functional.settings import get_settings, TestSettings
 from tests.functional.testdata.discounts import personal_discounts_init_data, base_discounts_init_data
 from tests.functional.testdata.promocodes import personal_promocodes_init_data, \
@@ -17,12 +16,12 @@ from tests.functional.utils import create_pg_records, delete_all_pg_records
 conf = get_settings()
 
 
-@pytest.fixture(scope="session")
+@pytest_asyncio.fixture(scope="session")
 def event_loop() -> Generator:
     """Фикстура главного цикла событий."""
-    loop = asyncio.new_event_loop()
+    loop = asyncio.get_event_loop()
     yield loop
-    loop.close()
+    asyncio.get_event_loop().stop()
 
 
 async def init():
@@ -32,7 +31,17 @@ async def init():
     await init_broker_connection()
 
 
-@pytest.fixture
+async def shutdown():
+    import broker.broker_connection
+    from db.db_factory import get_session
+
+    session = await get_session()
+    await session.close()
+    await broker.broker_connection._channel.close()
+    await broker.broker_connection._connection.close()
+
+
+@pytest_asyncio.fixture
 def api_client(event_loop: AbstractEventLoop, mocker) -> Generator:
     """Фикстура апи-клиента с моком es и redis."""
     mocker.patch("core.config.get_settings", wraps=get_settings)
@@ -45,11 +54,15 @@ def api_client(event_loop: AbstractEventLoop, mocker) -> Generator:
     asyncio.get_event_loop().run_until_complete(init())
 
     yield client
-    event_loop.run_until_complete(client.aclose())
+    asyncio.get_event_loop().run_until_complete(shutdown())
 
 
 @pytest_asyncio.fixture
-async def promocodes_api_client(api_client: AsyncClient, postgres_promocodes_data: AsyncSession) -> AsyncGenerator:
+async def promocodes_api_client(
+        api_client: AsyncClient,
+        postgres_promocodes_data: AsyncSession,
+        mocker
+) -> AsyncGenerator:
     """Фикстура апи-клиента с заполненными данными es для тестирования промокодов."""
     yield api_client
 
@@ -60,12 +73,18 @@ async def discounts_api_client(api_client: AsyncClient, postgres_discounts_data:
     yield api_client
 
 
-@pytest.fixture(scope="session")
-async def postgres_promocodes_data() -> AsyncGenerator:
+@pytest_asyncio.fixture
+async def postgres_promocodes_data(mocker) -> AsyncGenerator:
     """Фикстура алхимии для бд postgres c заполненными данными о промокодах."""
-    from db.db_factory import get_session
+    mocker.patch("core.config.get_settings", wraps=get_settings)
+    mocker.patch("core.config.Settings", wraps=TestSettings)
+    from db.db_factory import get_session, get_engine
 
     session = await get_session()
+    engine = await get_engine()
+
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
 
     await create_pg_records(session, BasePromocode, base_promocodes_init_data)
     await create_pg_records(session, PersonalPromocode, personal_promocodes_init_data)
@@ -73,17 +92,23 @@ async def postgres_promocodes_data() -> AsyncGenerator:
 
     yield session
 
-    await delete_all_pg_records(session, BasePromocode)
-    await delete_all_pg_records(session, PersonalPromocode)
     await delete_all_pg_records(session, PromocodeHistory)
+    await delete_all_pg_records(session, PersonalPromocode)
+    await delete_all_pg_records(session, BasePromocode)
 
 
-@pytest.fixture(scope="session")
-async def postgres_discounts_data() -> AsyncGenerator:
+@pytest_asyncio.fixture
+async def postgres_discounts_data(mocker) -> AsyncGenerator:
     """Фикстура алхимии для бд postgres c заполненными данными о скидках."""
-    from db.db_factory import get_session
+    mocker.patch("core.config.get_settings", wraps=get_settings)
+    mocker.patch("core.config.Settings", wraps=TestSettings)
+    from db.db_factory import get_session, get_engine
 
     session = await get_session()
+
+    engine = await get_engine()
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
 
     await create_pg_records(session, BaseDiscount, base_discounts_init_data)
     await create_pg_records(session, PersonalDiscount, personal_discounts_init_data)
