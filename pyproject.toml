@@ -9,6 +9,7 @@ packages = [{ include = "loyality_service" }]
 [tool.poetry.dependencies]
 python = "^3.10"
 alembic = "^1.9.2"
+pytest = "^7.2.1"
 
 [build-system]
 requires = ["poetry-core"]
