@@ -1,0 +1,30 @@
+version: '3.3'
+services:
+  loyalty-tests:
+    build:
+      context: ../..
+      dockerfile: tests/functional/Dockerfile
+    env_file:
+      - .env
+    entrypoint: >
+      sh -c "pytest tests/functional/src"
+
+  loyalty-postgres-tests:
+    container_name: loyalty-postgres-tests
+    image: postgres:13
+    environment:
+      POSTGRES_USER: ${LOYALTY_POSTGRES_DB_USER}
+      POSTGRES_PASSWORD: ${LOYALTY_POSTGRES_DB_PASSWORD}
+      POSTGRES_DB: ${LOYALTY_POSTGRES_DB_NAME}
+    ports:
+      - "5434:5432"
+
+  loyalty-rabbit-tests:
+    image: rabbitmq:3.9-management
+    container_name: loyalty-rabbit-tests
+    logging:
+      driver: none
+    restart: always
+    ports:
+      - "5673:5672"
+      - "15673:15672"
