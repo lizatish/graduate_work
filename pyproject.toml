@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "loyality-service"
+version = "0.1.0"
+description = ""
+authors = ["Liza Tishkovets, Oleg Rubtsov"]
+readme = "README.md"
+packages = [{ include = "loyality_service" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+alembic = "^1.9.2"
+pytest = "^7.2.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
