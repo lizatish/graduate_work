@@ -9,9 +9,17 @@ from sqlalchemy.sql import func
 Base = declarative_base()
 
 
-class PromocodeStatus(enum.Enum):
+class BaseStatus(enum.Enum):
     in_process = "in_process"
     finished = "finished"
+
+
+class PromocodeStatus(BaseStatus):
+    pass
+
+
+class DiscountStatus(BaseStatus):
+    not_processed = "not_processed"
 
 
 class PromocodeType(enum.Enum):
@@ -23,12 +31,6 @@ class DiscountType(enum.Enum):
     all_users = "all_users"
     registration = "registration"
     birthday = "birthday"
-
-
-class DiscountStatus(enum.Enum):
-    not_processed = "not_processed"
-    in_process = "in_process"
-    finished = "finished"
 
 
 class UUIDMixin:
