@@ -9,16 +9,14 @@ from sqlalchemy.sql import func
 Base = declarative_base()
 
 
-class BaseStatus(enum.Enum):
+class PromocodeStatus(enum.Enum):
     in_process = "in_process"
     finished = "finished"
 
 
-class PromocodeStatus(BaseStatus):
-    pass
-
-
-class DiscountStatus(BaseStatus):
+class DiscountStatus(enum.Enum):
+    in_process = "in_process"
+    finished = "finished"
     not_processed = "not_processed"
 
 
