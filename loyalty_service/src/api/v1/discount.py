@@ -5,6 +5,9 @@ from fastapi import APIRouter, Depends
 from services.discount import get_discount_service, DiscountService
 from core.middleware import AuthRequired
 from core.config import get_settings
+from services.json import JsonService
+from api.v1.schemas.general import Discount
+from models.db_models import DiscountStatus
 
 
 router = APIRouter()
@@ -17,47 +20,49 @@ async def discounts_scope(
         discount_service: DiscountService = Depends(get_discount_service),
         user_id: uuid.UUID = Depends(AuthRequired(conf.AUTH_LOGIN_REQUIRED))
 ):
-    pass
+    discounts = await discount_service.get_discounts(user_id)
+    if not discounts:
+        return JsonService.return_not_found('Discounts not found')
+    return JsonService.prepare_output(Discount, discounts)
 
 
-@router.post('/apply', summary='Применить скидку')
-async def apply_discount(
+@router.post('/apply-personal-discount/{discount_id}', summary='Применить персональную скидку')
+async def apply_personal_discount(
+        discount_id: uuid.UUID,
         discount_service: DiscountService = Depends(get_discount_service),
         user_id: uuid.UUID = Depends(AuthRequired(conf.AUTH_LOGIN_REQUIRED))
 ):
-    pass
-
-
-@router.post('/confirm', summary='Подтвердить скидку')
-async def confirm_discount(
-        discount_service: DiscountService = Depends(get_discount_service),
-        user_id: uuid.UUID = Depends(AuthRequired(conf.AUTH_LOGIN_REQUIRED))
-):
-    pass
-
-
-@router.post('/revoke', summary='Отозвать скидку')
-async def revoke_discount(
-        discount_service: DiscountService = Depends(get_discount_service),
-        user_id: uuid.UUID = Depends(AuthRequired(conf.AUTH_LOGIN_REQUIRED))
-):
-    pass
-
-
-@router.post('/test', summary='test')
-async def test(
-        discount_service: DiscountService = Depends(get_discount_service),
-        user_id: uuid.UUID = Depends(AuthRequired(conf.AUTH_LOGIN_REQUIRED))
-):
-    test = await discount_service.test()
-    if test:
-        logger.info(
-            "test discount - %(discount_id)d was created by user %(user_id)d",
-            {"discount_id": test.id, "user_id": user_id}
-        )
-        return f'success-{user_id}'
-    logger.info(
-        "test discount fail created by user %(user_id)d",
-        {"user_id": user_id}
+    applied = await discount_service.change_personal_discount_status(
+        user_id, discount_id, DiscountStatus.not_processed, DiscountStatus.in_process
     )
-    return f'fail-{user_id}'
+    if applied:
+        return JsonService.return_success_response('Discount applied')
+    return JsonService.return_not_found('The discount has already been used or is no longer available!')
+
+
+@router.post('/confirm-personal-discount/{discount_id}', summary='Подтвердить персональную скидку')
+async def confirm_discount(
+        discount_id: uuid.UUID,
+        discount_service: DiscountService = Depends(get_discount_service),
+        user_id: uuid.UUID = Depends(AuthRequired(conf.AUTH_LOGIN_REQUIRED))
+):
+    confirmed = await discount_service.change_personal_discount_status(
+        user_id, discount_id, DiscountStatus.in_process, DiscountStatus.finished
+    )
+    if confirmed:
+        return JsonService.return_success_response('Discount confirmed')
+    return JsonService.return_not_found('Discount not found')
+
+
+@router.post('/revoke-personal-discount/{discount_id}', summary='Отозвать персональную скидку')
+async def revoke_discount(
+        discount_id: uuid.UUID,
+        discount_service: DiscountService = Depends(get_discount_service),
+        user_id: uuid.UUID = Depends(AuthRequired(conf.AUTH_LOGIN_REQUIRED))
+):
+    revoked = await discount_service.change_personal_discount_status(
+        user_id, discount_id, DiscountStatus.in_process, DiscountStatus.not_processed
+    )
+    if revoked:
+        return JsonService.return_success_response('Discount revoked')
+    return JsonService.return_not_found('Discount not found')

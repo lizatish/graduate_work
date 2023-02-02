@@ -7,8 +7,8 @@ from pydantic import BaseSettings
 class Settings(BaseSettings):
     """Настройки приложения."""
 
-    AUTH_SERVICE_HOST: str = '0.0.0.0'
-    AUTH_SERVICE_PORT: int = 4555
+    AUTH_SERVICE_HOST: str = 'dockervm.promo-miner.art'
+    AUTH_SERVICE_PORT = ''
     AUTH_LOGIN_REQUIRED: list[str] = ['STANDARD', 'ADMIN', 'PRIVILEGED']
 
     PROJECT_NAME: str = 'graduate_work'
