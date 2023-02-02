@@ -13,8 +13,8 @@ class TestSettings(BaseSettings):
 
     PROJECT_NAME: str = 'graduate_work'
 
-    DATABASE_URL: str
-    DATABASE_URL_ASYNC: str
+    DATABASE_URL: str = 'postgresql+psycopg2://user:password@localhost:5434/loyalty_postgres'
+    DATABASE_URL_ASYNC: str = 'postgresql+asyncpg://user:password@localhost:5434/loyalty_postgres'
 
     APP_HOST: str = '0.0.0.0'
     APP_PORT: int = 6666
@@ -24,7 +24,7 @@ class TestSettings(BaseSettings):
     LOGGER_MOD: str = 'a'
     LOGGER_BACKUP_COUNT: int = 5
 
-    BROKER_URL: str = 'amqp://loyalty-rabbit-tests'
+    BROKER_URL: str = 'amqp://localhost:5673'
 
     BASE_DIR: str = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
