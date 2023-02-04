@@ -1,8 +1,8 @@
-"""initial migration
+"""initial
 
-Revision ID: 11d619981896
+Revision ID: d204131a9410
 Revises: 
-Create Date: 2023-01-31 19:08:43.254984
+Create Date: 2023-02-04 22:29:30.797115
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '11d619981896'
+revision = 'd204131a9410'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -41,10 +41,11 @@ def upgrade() -> None:
     op.create_table('PersonalDiscount',
     sa.Column('discount', sa.UUID(), nullable=True),
     sa.Column('user_id', sa.UUID(), nullable=True),
-    sa.Column('discount_status', sa.Enum('not_processed', 'in_process', 'finished', name='discountstatus'), nullable=True),
+    sa.Column('discount_status', sa.Enum('in_process', 'finished', 'not_processed', name='discountstatus'), nullable=True),
     sa.Column('id', sa.UUID(), nullable=False),
     sa.ForeignKeyConstraint(['discount'], ['BaseDiscount.id'], ),
-    sa.PrimaryKeyConstraint('id')
+    sa.PrimaryKeyConstraint('id'),
+    sa.UniqueConstraint('discount', 'user_id', name='discount_user')
     )
     op.create_table('PersonalPromocode',
     sa.Column('promocode', sa.UUID(), nullable=True),

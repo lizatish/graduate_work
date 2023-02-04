@@ -1,0 +1,754 @@
+{"request_id": "123", "asctime":              "2023-02-04 20:36:00,462", "levelname": "INFO",              "name": "root", "message": "User-149393955986326085804477057950919798333 try to get all discounts."}
+{"request_id": "123", "asctime":              "2023-02-04 20:36:01,471", "levelname": "INFO",              "name": "root", "message": "Successfully found discounts for the user-149393955986326085804477057950919798333."}
+{"request_id": "123", "asctime":              "2023-02-04 20:37:31,579", "levelname": "INFO",              "name": "root", "message": "User-149393955986326085804477057950919798333 try to get all discounts."}
+{"request_id": "123", "asctime":              "2023-02-04 20:37:32,637", "levelname": "INFO",              "name": "root", "message": "Successfully found discounts for the user-149393955986326085804477057950919798333."}
+{"request_id": "123", "asctime":              "2023-02-04 20:43:38,275", "levelname": "INFO",              "name": "root", "message": "User-149393955986326085804477057950919798333 try to personal discount-202919824074763279904187199084395569371."}
+{"request_id": "123", "asctime":              "2023-02-04 20:45:27,621", "levelname": "INFO",              "name": "root", "message": "User-149393955986326085804477057950919798333 try to apply personal discount-202919824074763279904187199084395569371."}
+{"request_id": "123", "asctime":              "2023-02-04 20:46:11,495", "levelname": "INFO",              "name": "root", "message": "User-70643ab5-a9a9-4474-bcc6-1951bd09ae3d try to apply personal discount-98a8efc1-b5e3-4d57-b6b3-94fdf42d20db."}
+{"request_id": "123", "asctime":              "2023-02-04 20:46:35,317", "levelname": "INFO",              "name": "root", "message": "User-"70643ab5-a9a9-4474-bcc6-1951bd09ae3d" try to "apply" personal discount-"98a8efc1-b5e3-4d57-b6b3-94fdf42d20db"."}
+{"request_id": "123", "asctime":              "2023-02-04 20:47:41,762", "levelname": "INFO",              "name": "root", "message": "User-"70643ab5-a9a9-4474-bcc6-1951bd09ae3d" try to "apply" personal discount-"98a8efc1-b5e3-4d57-b6b3-94fdf42d20db"."}
+{"request_id": "123", "asctime":              "2023-02-04 20:47:41,923", "levelname": "INFO",              "name": "root", "message": "Failed to "apply" discount-"98a8efc1-b5e3-4d57-b6b3-94fdf42d20db" by user-"70643ab5-a9a9-4474-bcc6-1951bd09ae3d" (Discount not found)."}
+{"request_id": "123", "asctime":              "2023-02-04 20:48:31,327", "levelname": "INFO",              "name": "root", "message": "User-"70643ab5-a9a9-4474-bcc6-1951bd09ae3d" try to get all discounts."}
+{"request_id": "123", "asctime":              "2023-02-04 20:48:32,281", "levelname": "INFO",              "name": "root", "message": "Successfully found discounts for the user-"70643ab5-a9a9-4474-bcc6-1951bd09ae3d"."}
+{"request_id": "123", "asctime":              "2023-02-04 20:52:27,566", "levelname": "INFO",              "name": "root", "message": "User-"70643ab5-a9a9-4474-bcc6-1951bd09ae3d" try to "apply" personal discount-"98a8efc1-b5e3-4d57-b6b3-94fdf42d20db"."}
+{"request_id": "123", "asctime":              "2023-02-04 20:52:49,978", "levelname": "INFO",              "name": "root", "message": "User-"70643ab5-a9a9-4474-bcc6-1951bd09ae3d" try to "apply" personal discount-"98a8efc1-b5e3-4d57-b6b3-94fdf42d20db"."}
+{"request_id": "123", "asctime":              "2023-02-04 20:52:50,096", "levelname": "INFO",              "name": "root", "message": "Failed to "apply" discount-"98a8efc1-b5e3-4d57-b6b3-94fdf42d20db" by user-"70643ab5-a9a9-4474-bcc6-1951bd09ae3d" (Discount not found)."}
+{"request_id": "123", "asctime":              "2023-02-04 20:54:02,439", "levelname": "INFO",              "name": "root", "message": "User-"70643ab5-a9a9-4474-bcc6-1951bd09ae3d" try to "apply" personal discount-"98a8efc1-b5e3-4d57-b6b3-94fdf42d20db"."}
+{"request_id": "123", "asctime":              "2023-02-04 20:54:02,555", "levelname": "INFO",              "name": "root", "message": "Failed to "apply" discount-"98a8efc1-b5e3-4d57-b6b3-94fdf42d20db" by user-"70643ab5-a9a9-4474-bcc6-1951bd09ae3d" (Discount not found)."}
+{"request_id": "123", "asctime":              "2023-02-04 20:54:49,373", "levelname": "INFO",              "name": "root", "message": "User-"70643ab5-a9a9-4474-bcc6-1951bd09ae3d" try to "apply" personal discount-"98a8efc1-b5e3-4d57-b6b3-94fdf42d20db"."}
+{"request_id": "123", "asctime":              "2023-02-04 20:54:49,485", "levelname": "INFO",              "name": "root", "message": "Successfully "apply" discount-"98a8efc1-b5e3-4d57-b6b3-94fdf42d20db" by user-"70643ab5-a9a9-4474-bcc6-1951bd09ae3d"."}
+{"request_id": "123", "asctime":              "2023-02-04 20:55:56,286", "levelname": "INFO",              "name": "root", "message": "User-"70643ab5-a9a9-4474-bcc6-1951bd09ae3d" try to "apply" personal discount-"98a8efc1-b5e3-4d57-b6b3-94fdf42d20db"."}
+{"request_id": "123", "asctime":              "2023-02-04 20:55:56,395", "levelname": "INFO",              "name": "root", "message": "Failed to "apply" discount-"98a8efc1-b5e3-4d57-b6b3-94fdf42d20db" by user-"70643ab5-a9a9-4474-bcc6-1951bd09ae3d" (Discount not found)."}
+{"request_id": "123", "asctime":              "2023-02-04 20:56:14,726", "levelname": "INFO",              "name": "root", "message": "User-"70643ab5-a9a9-4474-bcc6-1951bd09ae3d" try to "apply" personal discount-"98a8efc1-b5e3-4d57-b6b3-94fdf42d20db"."}
+{"request_id": "123", "asctime":              "2023-02-04 20:56:14,840", "levelname": "INFO",              "name": "root", "message": "Successfully "apply" discount-"98a8efc1-b5e3-4d57-b6b3-94fdf42d20db" by user-"70643ab5-a9a9-4474-bcc6-1951bd09ae3d"."}
+{"request_id": "123", "asctime":              "2023-02-04 20:57:07,788", "levelname": "INFO",              "name": "root", "message": "User-"70643ab5-a9a9-4474-bcc6-1951bd09ae3d" try to get all discounts."}
+{"request_id": "123", "asctime":              "2023-02-04 20:57:08,944", "levelname": "INFO",              "name": "root", "message": "Successfully found discounts for the user-"70643ab5-a9a9-4474-bcc6-1951bd09ae3d"."}
+{"request_id": "123", "asctime":              "2023-02-04 20:58:32,201", "levelname": "INFO",              "name": "root", "message": "User-"70643ab5-a9a9-4474-bcc6-1951bd09ae3d" try to get all discounts."}
+{"request_id": "123", "asctime":              "2023-02-04 20:58:33,157", "levelname": "INFO",              "name": "root", "message": "Successfully found discounts for the user-"70643ab5-a9a9-4474-bcc6-1951bd09ae3d"."}
+{"request_id": "system:21e1ec61-fed6-4cfa-9593-2d479c0fc91d", "asctime":              "2023-02-04 22:00:38,794", "levelname": "INFO",              "name": "root", "message": "callback_registration message:b'{"user_id": "6bc9c710-d580-4acb-86c4-b28e825ac752", "discount_type": "registration"}'"}
+{"request_id": "system:21e1ec61-fed6-4cfa-9593-2d479c0fc91d", "asctime":              "2023-02-04 22:00:38,807", "levelname": "ERROR",              "name": "asyncio", "message": "Exception in callback _task_done(<Task finishe...., birthday")>) at /home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/tools.py:40
+handle: <Handle _task_done(<Task finishe...., birthday")>) at /home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/tools.py:40>"}
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/sqltypes.py", line 1591, in _db_value_for_elem
+    return self._valid_lookup[elem]
+KeyError: <DiscountTypeBroker.registration: 'registration'>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1808, in _execute_context
+    context = constructor(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1261, in _init_compiled
+    l_param: List[Any] = [
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1262, in <listcomp>
+    flattened_processors[key](compiled_params[key])
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/sqltypes.py", line 1738, in process
+    value = self._db_value_for_elem(value)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/sqltypes.py", line 1604, in _db_value_for_elem
+    raise LookupError(
+LookupError: 'DiscountTypeBroker.registration' is not among the defined enum values. Enum name: discounttype. Possible values: all_users, registratio.., birthday
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/tools.py", line 44, in _task_done
+    raise exc
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/broker/callbacks.py", line 21, in callback_discounts
+    is_created = await discount_service.create_personal_discounts(discount.user_id, discount.discount_type)
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/services/discount.py", line 75, in create_personal_discounts
+    discounts = await self.get_discounts_by_type(discount_type)
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/services/discount.py", line 95, in get_discounts_by_type
+    discounts = await self.session.execute(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 313, in execute
+    result = await greenlet_spawn(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 167, in greenlet_spawn
+    result = context.switch(value)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2229, in execute
+    return self._execute_internal(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2124, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 252, in orm_execute_statement
+    result = conn.execute(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1414, in execute
+    return meth(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 489, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1814, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2325, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1808, in _execute_context
+    context = constructor(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1261, in _init_compiled
+    l_param: List[Any] = [
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1262, in <listcomp>
+    flattened_processors[key](compiled_params[key])
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/sqltypes.py", line 1738, in process
+    value = self._db_value_for_elem(value)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/sqltypes.py", line 1604, in _db_value_for_elem
+    raise LookupError(
+sqlalchemy.exc.StatementError: (builtins.LookupError) 'DiscountTypeBroker.registration' is not among the defined enum values. Enum name: discounttype. Possible values: all_users, registratio.., birthday
+[SQL: SELECT "BaseDiscount".percent, "BaseDiscount".group_product_id, "BaseDiscount".discount_type, "BaseDiscount".id, "BaseDiscount".created_at, "BaseDiscount".expired_at 
+FROM "BaseDiscount" 
+WHERE "BaseDiscount".discount_type = $1::discounttype]
+[parameters: [{}]]
+{"request_id": "system:21e1ec61-fed6-4cfa-9593-2d479c0fc91d", "asctime":              "2023-02-04 22:00:38,811", "levelname": "ERROR",              "name": "asyncio", "message": "Task exception was never retrieved
+future: <Task finished name='Task-13' coro=<consumer() done, defined at /home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/queue.py:24> exception=StatementError("(builtins.LookupError) 'DiscountTypeBroker.registration' is not among the defined enum values. Enum name: discounttype. Possible values: all_users, registratio.., birthday")>"}
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/sqltypes.py", line 1591, in _db_value_for_elem
+    return self._valid_lookup[elem]
+KeyError: <DiscountTypeBroker.registration: 'registration'>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1808, in _execute_context
+    context = constructor(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1261, in _init_compiled
+    l_param: List[Any] = [
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1262, in <listcomp>
+    flattened_processors[key](compiled_params[key])
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/sqltypes.py", line 1738, in process
+    value = self._db_value_for_elem(value)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/sqltypes.py", line 1604, in _db_value_for_elem
+    raise LookupError(
+LookupError: 'DiscountTypeBroker.registration' is not among the defined enum values. Enum name: discounttype. Possible values: all_users, registratio.., birthday
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/queue.py", line 30, in consumer
+    return await create_task(callback, message)
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/broker/callbacks.py", line 21, in callback_discounts
+    is_created = await discount_service.create_personal_discounts(discount.user_id, discount.discount_type)
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/services/discount.py", line 75, in create_personal_discounts
+    discounts = await self.get_discounts_by_type(discount_type)
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/services/discount.py", line 95, in get_discounts_by_type
+    discounts = await self.session.execute(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 313, in execute
+    result = await greenlet_spawn(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 167, in greenlet_spawn
+    result = context.switch(value)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2229, in execute
+    return self._execute_internal(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2124, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 252, in orm_execute_statement
+    result = conn.execute(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1414, in execute
+    return meth(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 489, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1814, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2325, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1808, in _execute_context
+    context = constructor(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1261, in _init_compiled
+    l_param: List[Any] = [
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1262, in <listcomp>
+    flattened_processors[key](compiled_params[key])
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/sqltypes.py", line 1738, in process
+    value = self._db_value_for_elem(value)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/sqltypes.py", line 1604, in _db_value_for_elem
+    raise LookupError(
+sqlalchemy.exc.StatementError: (builtins.LookupError) 'DiscountTypeBroker.registration' is not among the defined enum values. Enum name: discounttype. Possible values: all_users, registratio.., birthday
+[SQL: SELECT "BaseDiscount".percent, "BaseDiscount".group_product_id, "BaseDiscount".discount_type, "BaseDiscount".id, "BaseDiscount".created_at, "BaseDiscount".expired_at 
+FROM "BaseDiscount" 
+WHERE "BaseDiscount".discount_type = $1::discounttype]
+[parameters: [{}]]
+{"request_id": "system:0cc7c6d4-66fe-451d-b654-98deac642f9f", "asctime":              "2023-02-04 22:03:53,999", "levelname": "INFO",              "name": "root", "message": "callback_registration message:b'{"user_id": "6bc9c710-d580-4acb-86c4-b28e825ac752", "discount_type": "registration"}'"}
+{"request_id": "system:0cc7c6d4-66fe-451d-b654-98deac642f9f", "asctime":              "2023-02-04 22:03:54,024", "levelname": "ERROR",              "name": "asyncio", "message": "Exception in callback _task_done(<Task finishe...., birthday")>) at /home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/tools.py:40
+handle: <Handle _task_done(<Task finishe...., birthday")>) at /home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/tools.py:40>"}
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/sqltypes.py", line 1591, in _db_value_for_elem
+    return self._valid_lookup[elem]
+KeyError: <DiscountTypeBroker.registration: 'registration'>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1808, in _execute_context
+    context = constructor(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1261, in _init_compiled
+    l_param: List[Any] = [
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1262, in <listcomp>
+    flattened_processors[key](compiled_params[key])
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/sqltypes.py", line 1738, in process
+    value = self._db_value_for_elem(value)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/sqltypes.py", line 1604, in _db_value_for_elem
+    raise LookupError(
+LookupError: 'DiscountTypeBroker.registration' is not among the defined enum values. Enum name: discounttype. Possible values: all_users, registratio.., birthday
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/tools.py", line 44, in _task_done
+    raise exc
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/broker/callbacks.py", line 21, in callback_discounts
+    is_created = await discount_service.create_personal_discounts(discount.user_id, discount.discount_type)
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/services/discount.py", line 75, in create_personal_discounts
+    discounts = await self.get_discounts_by_type(discount_type)
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/services/discount.py", line 95, in get_discounts_by_type
+    discounts = await self.session.execute(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 313, in execute
+    result = await greenlet_spawn(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 167, in greenlet_spawn
+    result = context.switch(value)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2229, in execute
+    return self._execute_internal(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2124, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 252, in orm_execute_statement
+    result = conn.execute(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1414, in execute
+    return meth(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 489, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1814, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2325, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1808, in _execute_context
+    context = constructor(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1261, in _init_compiled
+    l_param: List[Any] = [
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1262, in <listcomp>
+    flattened_processors[key](compiled_params[key])
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/sqltypes.py", line 1738, in process
+    value = self._db_value_for_elem(value)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/sqltypes.py", line 1604, in _db_value_for_elem
+    raise LookupError(
+sqlalchemy.exc.StatementError: (builtins.LookupError) 'DiscountTypeBroker.registration' is not among the defined enum values. Enum name: discounttype. Possible values: all_users, registratio.., birthday
+[SQL: SELECT "BaseDiscount".percent, "BaseDiscount".group_product_id, "BaseDiscount".discount_type, "BaseDiscount".id, "BaseDiscount".created_at, "BaseDiscount".expired_at 
+FROM "BaseDiscount" 
+WHERE "BaseDiscount".discount_type = $1::discounttype]
+[parameters: [{}]]
+{"request_id": "system:0cc7c6d4-66fe-451d-b654-98deac642f9f", "asctime":              "2023-02-04 22:03:54,026", "levelname": "ERROR",              "name": "asyncio", "message": "Task exception was never retrieved
+future: <Task finished name='Task-13' coro=<consumer() done, defined at /home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/queue.py:24> exception=StatementError("(builtins.LookupError) 'DiscountTypeBroker.registration' is not among the defined enum values. Enum name: discounttype. Possible values: all_users, registratio.., birthday")>"}
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/sqltypes.py", line 1591, in _db_value_for_elem
+    return self._valid_lookup[elem]
+KeyError: <DiscountTypeBroker.registration: 'registration'>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1808, in _execute_context
+    context = constructor(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1261, in _init_compiled
+    l_param: List[Any] = [
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1262, in <listcomp>
+    flattened_processors[key](compiled_params[key])
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/sqltypes.py", line 1738, in process
+    value = self._db_value_for_elem(value)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/sqltypes.py", line 1604, in _db_value_for_elem
+    raise LookupError(
+LookupError: 'DiscountTypeBroker.registration' is not among the defined enum values. Enum name: discounttype. Possible values: all_users, registratio.., birthday
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/queue.py", line 30, in consumer
+    return await create_task(callback, message)
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/broker/callbacks.py", line 21, in callback_discounts
+    is_created = await discount_service.create_personal_discounts(discount.user_id, discount.discount_type)
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/services/discount.py", line 75, in create_personal_discounts
+    discounts = await self.get_discounts_by_type(discount_type)
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/services/discount.py", line 95, in get_discounts_by_type
+    discounts = await self.session.execute(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 313, in execute
+    result = await greenlet_spawn(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 167, in greenlet_spawn
+    result = context.switch(value)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2229, in execute
+    return self._execute_internal(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2124, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 252, in orm_execute_statement
+    result = conn.execute(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1414, in execute
+    return meth(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 489, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1814, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2325, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1808, in _execute_context
+    context = constructor(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1261, in _init_compiled
+    l_param: List[Any] = [
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1262, in <listcomp>
+    flattened_processors[key](compiled_params[key])
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/sqltypes.py", line 1738, in process
+    value = self._db_value_for_elem(value)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/sqltypes.py", line 1604, in _db_value_for_elem
+    raise LookupError(
+sqlalchemy.exc.StatementError: (builtins.LookupError) 'DiscountTypeBroker.registration' is not among the defined enum values. Enum name: discounttype. Possible values: all_users, registratio.., birthday
+[SQL: SELECT "BaseDiscount".percent, "BaseDiscount".group_product_id, "BaseDiscount".discount_type, "BaseDiscount".id, "BaseDiscount".created_at, "BaseDiscount".expired_at 
+FROM "BaseDiscount" 
+WHERE "BaseDiscount".discount_type = $1::discounttype]
+[parameters: [{}]]
+{"request_id": "system:48b97b88-1395-4492-80a9-db92aa42e990", "asctime":              "2023-02-04 22:05:21,283", "levelname": "INFO",              "name": "root", "message": "callback_registration message:b'{"user_id": "6bc9c710-d580-4acb-86c4-b28e825ac752", "discount_type": "registration"}'"}
+{"request_id": "system:48b97b88-1395-4492-80a9-db92aa42e990", "asctime":              "2023-02-04 22:05:21,382", "levelname": "ERROR",              "name": "asyncio", "message": "Exception in callback _task_done(<Task finishe...ve_objects'")>) at /home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/tools.py:40
+handle: <Handle _task_done(<Task finishe...ve_objects'")>) at /home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/tools.py:40>"}
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/tools.py", line 44, in _task_done
+    raise exc
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/broker/callbacks.py", line 21, in callback_discounts
+    is_created = await discount_service.create_personal_discounts(discount.user_id, discount.discount_type)
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/services/discount.py", line 83, in create_personal_discounts
+    await self.session.bulk_save_objects(personal_discounts)
+AttributeError: 'AsyncSession' object has no attribute 'bulk_save_objects'
+{"request_id": "system:48b97b88-1395-4492-80a9-db92aa42e990", "asctime":              "2023-02-04 22:05:21,383", "levelname": "ERROR",              "name": "asyncio", "message": "Task exception was never retrieved
+future: <Task finished name='Task-13' coro=<consumer() done, defined at /home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/queue.py:24> exception=AttributeError("'AsyncSession' object has no attribute 'bulk_save_objects'")>"}
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/queue.py", line 30, in consumer
+    return await create_task(callback, message)
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/broker/callbacks.py", line 21, in callback_discounts
+    is_created = await discount_service.create_personal_discounts(discount.user_id, discount.discount_type)
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/services/discount.py", line 83, in create_personal_discounts
+    await self.session.bulk_save_objects(personal_discounts)
+AttributeError: 'AsyncSession' object has no attribute 'bulk_save_objects'
+{"request_id": "system:48b97b88-1395-4492-80a9-db92aa42e990", "asctime":              "2023-02-04 22:06:54,130", "levelname": "ERROR",              "name": "sqlalchemy.pool.impl.AsyncAdaptedQueuePool", "message": "Exception during reset or similar"}
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 983, in _finalize_fairy
+    fairy._reset(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1422, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 657, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 772, in rollback
+    self._handle_exception(error)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 719, in _handle_exception
+    raise error
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 770, in rollback
+    self.await_(self._transaction.rollback())
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 93, in await_only
+    raise exc.MissingGreenlet(
+sqlalchemy.exc.MissingGreenlet: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+{"request_id": "system:48b97b88-1395-4492-80a9-db92aa42e990", "asctime":              "2023-02-04 22:06:54,132", "levelname": "ERROR",              "name": "sqlalchemy.pool.impl.AsyncAdaptedQueuePool", "message": "Exception closing connection <AdaptedConnection <asyncpg.connection.Connection object at 0x7fe30d4ba7a0>>"}
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 983, in _finalize_fairy
+    fairy._reset(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1422, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 657, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 772, in rollback
+    self._handle_exception(error)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 719, in _handle_exception
+    raise error
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 770, in rollback
+    self.await_(self._transaction.rollback())
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 93, in await_only
+    raise exc.MissingGreenlet(
+sqlalchemy.exc.MissingGreenlet: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 380, in _close_connection
+    self._dialect.do_terminate(connection)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 984, in do_terminate
+    dbapi_connection.terminate()
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 793, in terminate
+    self._connection.terminate()
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/asyncpg/connection.py", line 1344, in terminate
+    self._abort()
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/asyncpg/connection.py", line 1371, in _abort
+    self._protocol.abort()
+  File "asyncpg/protocol/protocol.pyx", line 571, in asyncpg.protocol.protocol.BaseProtocol.abort
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 678, in abort
+    self._force_close(None)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 729, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+{"request_id": "system:bd8d9d11-d399-428c-a4a9-0074c64402c0", "asctime":              "2023-02-04 22:06:57,761", "levelname": "INFO",              "name": "root", "message": "callback_registration message:b'{"user_id": "6bc9c710-d580-4acb-86c4-b28e825ac752", "discount_type": "registration"}'"}
+{"request_id": "system:bd8d9d11-d399-428c-a4a9-0074c64402c0", "asctime":              "2023-02-04 22:06:57,882", "levelname": "ERROR",              "name": "asyncio", "message": "Exception in callback _task_done(<Task finishe... expression")>) at /home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/tools.py:40
+handle: <Handle _task_done(<Task finishe... expression")>) at /home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/tools.py:40>"}
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/tools.py", line 44, in _task_done
+    raise exc
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/broker/callbacks.py", line 21, in callback_discounts
+    is_created = await discount_service.create_personal_discounts(discount.user_id, discount.discount_type)
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/services/discount.py", line 83, in create_personal_discounts
+    await self.session.add_all(personal_discounts)
+TypeError: object NoneType can't be used in 'await' expression
+{"request_id": "system:bd8d9d11-d399-428c-a4a9-0074c64402c0", "asctime":              "2023-02-04 22:06:57,882", "levelname": "ERROR",              "name": "asyncio", "message": "Task exception was never retrieved
+future: <Task finished name='Task-13' coro=<consumer() done, defined at /home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/queue.py:24> exception=TypeError("object NoneType can't be used in 'await' expression")>"}
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/queue.py", line 30, in consumer
+    return await create_task(callback, message)
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/broker/callbacks.py", line 21, in callback_discounts
+    is_created = await discount_service.create_personal_discounts(discount.user_id, discount.discount_type)
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/services/discount.py", line 83, in create_personal_discounts
+    await self.session.add_all(personal_discounts)
+TypeError: object NoneType can't be used in 'await' expression
+{"request_id": "system:bd8d9d11-d399-428c-a4a9-0074c64402c0", "asctime":              "2023-02-04 22:07:19,485", "levelname": "ERROR",              "name": "sqlalchemy.pool.impl.AsyncAdaptedQueuePool", "message": "Exception during reset or similar"}
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 983, in _finalize_fairy
+    fairy._reset(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1422, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 657, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 772, in rollback
+    self._handle_exception(error)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 719, in _handle_exception
+    raise error
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 770, in rollback
+    self.await_(self._transaction.rollback())
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 93, in await_only
+    raise exc.MissingGreenlet(
+sqlalchemy.exc.MissingGreenlet: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+{"request_id": "system:bd8d9d11-d399-428c-a4a9-0074c64402c0", "asctime":              "2023-02-04 22:07:19,486", "levelname": "ERROR",              "name": "sqlalchemy.pool.impl.AsyncAdaptedQueuePool", "message": "Exception closing connection <AdaptedConnection <asyncpg.connection.Connection object at 0x7fb378aaa7a0>>"}
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 983, in _finalize_fairy
+    fairy._reset(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1422, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 657, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 772, in rollback
+    self._handle_exception(error)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 719, in _handle_exception
+    raise error
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 770, in rollback
+    self.await_(self._transaction.rollback())
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 93, in await_only
+    raise exc.MissingGreenlet(
+sqlalchemy.exc.MissingGreenlet: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 380, in _close_connection
+    self._dialect.do_terminate(connection)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 984, in do_terminate
+    dbapi_connection.terminate()
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 793, in terminate
+    self._connection.terminate()
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/asyncpg/connection.py", line 1344, in terminate
+    self._abort()
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/asyncpg/connection.py", line 1371, in _abort
+    self._protocol.abort()
+  File "asyncpg/protocol/protocol.pyx", line 571, in asyncpg.protocol.protocol.BaseProtocol.abort
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 678, in abort
+    self._force_close(None)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 729, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+{"request_id": "system:1c229737-0e49-4c5d-8a08-3af373d0a772", "asctime":              "2023-02-04 22:07:22,696", "levelname": "INFO",              "name": "root", "message": "callback_registration message:b'{"user_id": "6bc9c710-d580-4acb-86c4-b28e825ac752", "discount_type": "registration"}'"}
+{"request_id": "system:1c229737-0e49-4c5d-8a08-3af373d0a772", "asctime":              "2023-02-04 22:07:22,942", "levelname": "INFO",              "name": "root", "message": "test discount fail"}
+{"request_id": "system:2318d4ad-45ab-463c-afc2-355a08a2a174", "asctime":              "2023-02-04 22:11:15,507", "levelname": "INFO",              "name": "root", "message": "callback_registration message:b'{"user_id": "6bc9c710-d580-4acb-86c4-b28e825ac752", "discount_type": "registration"}'"}
+{"request_id": "system:2318d4ad-45ab-463c-afc2-355a08a2a174", "asctime":              "2023-02-04 22:11:15,701", "levelname": "ERROR",              "name": "asyncio", "message": "Exception in callback _task_done(<Task finishe...ibute 'msg'")>) at /home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/tools.py:40
+handle: <Handle _task_done(<Task finishe...ibute 'msg'")>) at /home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/tools.py:40>"}
+Traceback (most recent call last):
+  File "asyncpg/protocol/prepared_stmt.pyx", line 168, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg/protocol/codecs/base.pyx", line 206, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg/protocol/codecs/base.pyx", line 111, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg/pgproto/./codecs/uuid.pyx", line 20, in asyncpg.pgproto.pgproto.uuid_encode
+AttributeError: 'BaseDiscount' object has no attribute 'bytes'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 482, in _prepare_and_execute
+    self._rows = await prepared_stmt.fetch(*parameters)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/asyncpg/prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/asyncpg/prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/asyncpg/prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+  File "asyncpg/protocol/protocol.pyx", line 183, in bind_execute
+  File "asyncpg/protocol/prepared_stmt.pyx", line 197, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: <models.db_models.BaseDiscount object at... ('BaseDiscount' object has no attribute 'bytes')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 747, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 515, in execute
+    self._adapt_connection.await_(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 102, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 160, in greenlet_spawn
+    value = await result
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 494, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 444, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 717, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.Error: <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $1: <models.db_models.BaseDiscount object at... ('BaseDiscount' object has no attribute 'bytes')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/services/discount.py", line 87, in create_personal_discounts
+    await self.session.commit()
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 807, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 167, in greenlet_spawn
+    result = context.switch(value)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1903, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1218, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1193, in _prepare_impl
+    self.session.flush()
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4140, in flush
+    self._flush(objects)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4276, in _flush
+    with util.safe_reraise():
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 147, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4237, in _flush
+    flush_context.execute()
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 467, in execute
+    rec.execute(self)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 644, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 1188, in _emit_insert_statements
+    result = connection.execute(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1414, in execute
+    return meth(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 489, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2325, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 747, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 515, in execute
+    self._adapt_connection.await_(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 102, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 160, in greenlet_spawn
+    value = await result
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 494, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 444, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 717, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.DBAPIError: (sqlalchemy.dialects.postgresql.asyncpg.Error) <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $1: <models.db_models.BaseDiscount object at... ('BaseDiscount' object has no attribute 'bytes')
+[SQL: INSERT INTO "PersonalDiscount" (discount, user_id, discount_status, id) VALUES ($1::UUID, $2::UUID, $3::discountstatus, $4::UUID)]
+[parameters: (<models.db_models.BaseDiscount object at 0x7f04da23d780>, UUID('6bc9c710-d580-4acb-86c4-b28e825ac752'), 'not_processed', UUID('7408dabf-a41f-4d9e-b86c-e4fad49ea349'))]
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/tools.py", line 44, in _task_done
+    raise exc
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/broker/callbacks.py", line 21, in callback_discounts
+    is_created = await discount_service.create_personal_discounts(discount.user_id, discount.discount_type)
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/services/discount.py", line 90, in create_personal_discounts
+    logger.error(f"ERROR: {exc.msg}, line {exc.lineno}, column {exc.colno}")
+AttributeError: 'DBAPIError' object has no attribute 'msg'
+{"request_id": "system:2318d4ad-45ab-463c-afc2-355a08a2a174", "asctime":              "2023-02-04 22:11:15,705", "levelname": "ERROR",              "name": "asyncio", "message": "Task exception was never retrieved
+future: <Task finished name='Task-13' coro=<consumer() done, defined at /home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/queue.py:24> exception=AttributeError("'DBAPIError' object has no attribute 'msg'")>"}
+Traceback (most recent call last):
+  File "asyncpg/protocol/prepared_stmt.pyx", line 168, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg/protocol/codecs/base.pyx", line 206, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg/protocol/codecs/base.pyx", line 111, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg/pgproto/./codecs/uuid.pyx", line 20, in asyncpg.pgproto.pgproto.uuid_encode
+AttributeError: 'BaseDiscount' object has no attribute 'bytes'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 482, in _prepare_and_execute
+    self._rows = await prepared_stmt.fetch(*parameters)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/asyncpg/prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/asyncpg/prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/asyncpg/prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+  File "asyncpg/protocol/protocol.pyx", line 183, in bind_execute
+  File "asyncpg/protocol/prepared_stmt.pyx", line 197, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: <models.db_models.BaseDiscount object at... ('BaseDiscount' object has no attribute 'bytes')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 747, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 515, in execute
+    self._adapt_connection.await_(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 102, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 160, in greenlet_spawn
+    value = await result
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 494, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 444, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 717, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.Error: <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $1: <models.db_models.BaseDiscount object at... ('BaseDiscount' object has no attribute 'bytes')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/services/discount.py", line 87, in create_personal_discounts
+    await self.session.commit()
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 807, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 167, in greenlet_spawn
+    result = context.switch(value)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1903, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1218, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1193, in _prepare_impl
+    self.session.flush()
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4140, in flush
+    self._flush(objects)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4276, in _flush
+    with util.safe_reraise():
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 147, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4237, in _flush
+    flush_context.execute()
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 467, in execute
+    rec.execute(self)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 644, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 1188, in _emit_insert_statements
+    result = connection.execute(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1414, in execute
+    return meth(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 489, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2325, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 747, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 515, in execute
+    self._adapt_connection.await_(
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 102, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 160, in greenlet_spawn
+    value = await result
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 494, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 444, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 717, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.DBAPIError: (sqlalchemy.dialects.postgresql.asyncpg.Error) <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $1: <models.db_models.BaseDiscount object at... ('BaseDiscount' object has no attribute 'bytes')
+[SQL: INSERT INTO "PersonalDiscount" (discount, user_id, discount_status, id) VALUES ($1::UUID, $2::UUID, $3::discountstatus, $4::UUID)]
+[parameters: (<models.db_models.BaseDiscount object at 0x7f04da23d780>, UUID('6bc9c710-d580-4acb-86c4-b28e825ac752'), 'not_processed', UUID('7408dabf-a41f-4d9e-b86c-e4fad49ea349'))]
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/oleg/yandex/graduate_work/.venv/lib/python3.10/site-packages/aio_pika/queue.py", line 30, in consumer
+    return await create_task(callback, message)
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/broker/callbacks.py", line 21, in callback_discounts
+    is_created = await discount_service.create_personal_discounts(discount.user_id, discount.discount_type)
+  File "/home/oleg/yandex/graduate_work/loyalty_service/src/services/discount.py", line 90, in create_personal_discounts
+    logger.error(f"ERROR: {exc.msg}, line {exc.lineno}, column {exc.colno}")
+AttributeError: 'DBAPIError' object has no attribute 'msg'
+{"request_id": "system:756c09b0-d632-4c75-be39-ac18a906bc68", "asctime":              "2023-02-04 22:12:13,595", "levelname": "INFO",              "name": "root", "message": "callback_registration message:b'{"user_id": "6bc9c710-d580-4acb-86c4-b28e825ac752", "discount_type": "registration"}'"}
+{"request_id": "system:756c09b0-d632-4c75-be39-ac18a906bc68", "asctime":              "2023-02-04 22:12:13,785", "levelname": "ERROR",              "name": "root", "message": "ERROR: (sqlalchemy.dialects.postgresql.asyncpg.Error) <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $1: <models.db_models.BaseDiscount object at... ('BaseDiscount' object has no attribute 'bytes')
+[SQL: INSERT INTO "PersonalDiscount" (discount, user_id, discount_status, id) VALUES ($1::UUID, $2::UUID, $3::discountstatus, $4::UUID)]
+[parameters: (<models.db_models.BaseDiscount object at 0x7fb464b1d780>, UUID('6bc9c710-d580-4acb-86c4-b28e825ac752'), 'not_processed', UUID('1bf07843-ca28-4650-9147-396d0b29cfdc'))]
+(Background on this error at: https://sqlalche.me/e/20/dbapi)"}
+{"request_id": "system:756c09b0-d632-4c75-be39-ac18a906bc68", "asctime":              "2023-02-04 22:12:13,785", "levelname": "INFO",              "name": "root", "message": "test discount fail"}
+{"request_id": "system:3bf3a69e-ebe4-471e-a700-41aa2fdfdfa5", "asctime":              "2023-02-04 22:13:55,621", "levelname": "INFO",              "name": "root", "message": "callback_registration message:b'{"user_id": "6bc9c710-d580-4acb-86c4-b28e825ac752", "discount_type": "registration"}'"}
+{"request_id": "system:3bf3a69e-ebe4-471e-a700-41aa2fdfdfa5", "asctime":              "2023-02-04 22:13:55,793", "levelname": "INFO",              "name": "root", "message": "test discount success"}
+{"request_id": "system:3bf3a69e-ebe4-471e-a700-41aa2fdfdfa5", "asctime":              "2023-02-04 22:14:58,628", "levelname": "INFO",              "name": "root", "message": "callback_registration message:b'{"user_id": "6bc9c710-d580-4acb-86c4-b28e825ac752", "discount_type": "registration"}'"}
+{"request_id": "system:3bf3a69e-ebe4-471e-a700-41aa2fdfdfa5", "asctime":              "2023-02-04 22:14:58,632", "levelname": "INFO",              "name": "root", "message": "test discount success"}
+{"request_id": "system:c8b0bb33-adc4-4bb3-8e24-b87db23fb891", "asctime":              "2023-02-04 22:31:51,649", "levelname": "INFO",              "name": "root", "message": "callback_registration message:b'{"user_id": "6bc9c710-d580-4acb-86c4-b28e825ac752", "discount_type": "registration"}'"}
+{"request_id": "system:c8b0bb33-adc4-4bb3-8e24-b87db23fb891", "asctime":              "2023-02-04 22:31:51,817", "levelname": "INFO",              "name": "root", "message": "test discount success"}
+{"request_id": "system:c8b0bb33-adc4-4bb3-8e24-b87db23fb891", "asctime":              "2023-02-04 22:31:59,652", "levelname": "INFO",              "name": "root", "message": "callback_registration message:b'{"user_id": "6bc9c710-d580-4acb-86c4-b28e825ac752", "discount_type": "registration"}'"}
+{"request_id": "system:c8b0bb33-adc4-4bb3-8e24-b87db23fb891", "asctime":              "2023-02-04 22:31:59,655", "levelname": "ERROR",              "name": "root", "message": "ERROR: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "discount_user"
+DETAIL:  Key (discount, user_id)=(6bc9c710-d580-4acb-86c4-b28e825ac752, 6bc9c710-d580-4acb-86c4-b28e825ac752) already exists.
+[SQL: INSERT INTO "PersonalDiscount" (discount, user_id, discount_status, id) VALUES ($1::UUID, $2::UUID, $3::discountstatus, $4::UUID)]
+[parameters: (UUID('6bc9c710-d580-4acb-86c4-b28e825ac752'), UUID('6bc9c710-d580-4acb-86c4-b28e825ac752'), 'not_processed', UUID('5ceee49d-2251-4e88-8b91-f974a84cb0bf'))]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)"}
+{"request_id": "system:c8b0bb33-adc4-4bb3-8e24-b87db23fb891", "asctime":              "2023-02-04 22:31:59,656", "levelname": "INFO",              "name": "root", "message": "test discount fail"}
+{"request_id": "system:c8b0bb33-adc4-4bb3-8e24-b87db23fb891", "asctime":              "2023-02-04 22:32:49,326", "levelname": "INFO",              "name": "root", "message": "callback_registration message:b'{"user_id": "6bc9c710-d580-4acb-86c4-b28e825ac752", "discount_type": "registration"}'"}
+{"request_id": "system:c8b0bb33-adc4-4bb3-8e24-b87db23fb891", "asctime":              "2023-02-04 22:32:49,330", "levelname": "ERROR",              "name": "root", "message": "ERROR: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "discount_user"
+DETAIL:  Key (discount, user_id)=(6bc9c710-d580-4acb-86c4-b28e825ac752, 6bc9c710-d580-4acb-86c4-b28e825ac752) already exists.
+[SQL: INSERT INTO "PersonalDiscount" (discount, user_id, discount_status, id) VALUES ($1::UUID, $2::UUID, $3::discountstatus, $4::UUID)]
+[parameters: [(UUID('6bc9c710-d580-4acb-86c4-b28e825ac752'), UUID('6bc9c710-d580-4acb-86c4-b28e825ac752'), 'not_processed', UUID('8e336388-223e-4ac7-965b-51f0004756ac')), (UUID('eb388821-4967-49a3-9052-2ef6495dadc3'), UUID('6bc9c710-d580-4acb-86c4-b28e825ac752'), 'not_processed', UUID('ce21114e-6e62-4732-9452-48c9c4fe7d88'))]]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)"}
+{"request_id": "system:c8b0bb33-adc4-4bb3-8e24-b87db23fb891", "asctime":              "2023-02-04 22:32:49,330", "levelname": "INFO",              "name": "root", "message": "test discount fail"}
+{"request_id": "system:c8b0bb33-adc4-4bb3-8e24-b87db23fb891", "asctime":              "2023-02-04 22:33:07,409", "levelname": "INFO",              "name": "root", "message": "callback_registration message:b'{"user_id": "6bc9c710-d580-4acb-86c4-b28e825ac752", "discount_type": "registration"}'"}
+{"request_id": "system:c8b0bb33-adc4-4bb3-8e24-b87db23fb891", "asctime":              "2023-02-04 22:33:07,414", "levelname": "INFO",              "name": "root", "message": "test discount success"}
+{"request_id": "system:f6527366-a3d8-4c85-9383-4d256a9e3a7e", "asctime":              "2023-02-04 22:51:55,868", "levelname": "INFO",              "name": "root", "message": "callback_discounts message:"b'{"user_id": "6bc9c710-d580-4acb-86c4-b28e825ac752", "discount_type": "registration"}'""}
+{"request_id": "system:f6527366-a3d8-4c85-9383-4d256a9e3a7e", "asctime":              "2023-02-04 22:51:56,032", "levelname": "INFO",              "name": "root", "message": "Failed to create "registration" discounts for user-"6bc9c710-d580-4acb-86c4-b28e825ac752" (already exists)."}
+{"request_id": "system:f6527366-a3d8-4c85-9383-4d256a9e3a7e", "asctime":              "2023-02-04 22:52:25,449", "levelname": "INFO",              "name": "root", "message": "callback_discounts message:"b'{"user_id": "6bc9c710-d580-4acb-86c4-b28e825ac752", "discount_type": "registration"}'""}
+{"request_id": "system:f6527366-a3d8-4c85-9383-4d256a9e3a7e", "asctime":              "2023-02-04 22:52:25,454", "levelname": "INFO",              "name": "root", "message": "Successfully created "registration" discounts for user-"6bc9c710-d580-4acb-86c4-b28e825ac752"."}

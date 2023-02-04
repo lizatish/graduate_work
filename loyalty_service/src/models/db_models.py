@@ -74,3 +74,5 @@ class PersonalDiscount(Base, UUIDMixin):
     discount = sqlalchemy.Column(sqlalchemy.ForeignKey("BaseDiscount.id"))
     user_id = sqlalchemy.Column(UUID(as_uuid=True))
     discount_status = sqlalchemy.Column(sqlalchemy.Enum(DiscountStatus))
+
+    __table_args__ = (sqlalchemy.UniqueConstraint('discount', 'user_id', name='discount_user'),)

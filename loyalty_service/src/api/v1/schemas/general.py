@@ -6,6 +6,8 @@ from models.db_models import DiscountType
 
 
 class Discount(BaseModel):
+    """Схема скидки."""
+
     id: uuid.UUID
     created_at: datetime
     expired_at: datetime
