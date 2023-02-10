@@ -12,8 +12,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from core.config import get_settings
 from db.db_factory import get_session
 from models.broker_models import DiscountTypeBroker
-from models.common import LoyaltyStatus
-from models.db_models import BaseDiscount, DiscountType, PersonalDiscount
+from models.db_models import BaseDiscount, PersonalDiscount
+from models.common import DiscountType, LoyaltyStatus
 
 conf = get_settings()
 logger = logging.getLogger()
@@ -74,7 +74,7 @@ class DiscountService:
         for discount in discounts:
             personal_discounts.append(
                 PersonalDiscount(
-                    discount_id=discount.id, user_id=user_id, discount_status=LoyaltyStatus.not_processed
+                    discount=discount.id, user_id=user_id, discount_status=LoyaltyStatus.not_processed  # type: ignore
                 )
             )
         self.session.add_all(personal_discounts)

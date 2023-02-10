@@ -67,8 +67,12 @@ async def promocodes_api_client(
     yield api_client
 
 
-@pytest_asyncio.fixture(scope="session")
-async def discounts_api_client(api_client: AsyncClient, postgres_discounts_data: AsyncSession) -> AsyncGenerator:
+@pytest_asyncio.fixture
+async def discounts_api_client(
+        api_client: AsyncClient,
+        postgres_discounts_data: AsyncSession,
+        mocker
+) -> AsyncGenerator:
     """Фикстура апи-клиента с заполненными данными es для тестирования скидок."""
     yield api_client
 
@@ -115,5 +119,5 @@ async def postgres_discounts_data(mocker) -> AsyncGenerator:
 
     yield session
 
-    await delete_all_pg_records(session, BaseDiscount)
     await delete_all_pg_records(session, PersonalDiscount)
+    await delete_all_pg_records(session, BaseDiscount)
