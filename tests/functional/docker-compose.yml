@@ -1,0 +1,47 @@
+version: '3.3'
+services:
+#  loyalty-tests:
+#    build:
+#      context: ../..
+#      dockerfile: tests/functional/Dockerfile
+#    depends_on:
+#      loyalty-rabbit-tests:
+#        condition: service_healthy
+#      loyalty-postgres-tests:
+#        condition: service_healthy
+#    env_file:
+#      - .env
+#    entrypoint: >
+#      sh -c "pytest tests/functional/src"
+
+
+  loyalty-postgres-tests:
+    container_name: loyalty-postgres-tests
+    image: postgres:13
+    environment:
+      POSTGRES_USER: ${LOYALTY_POSTGRES_DB_USER}
+      POSTGRES_PASSWORD: ${LOYALTY_POSTGRES_DB_PASSWORD}
+      POSTGRES_DB: ${LOYALTY_POSTGRES_DB_NAME}
+    ports:
+      - "5434:5432"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:5434" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+
+  loyalty-rabbit-tests:
+    image: rabbitmq:3.9-management
+    container_name: loyalty-rabbit-tests
+    logging:
+      driver: none
+    restart: always
+    ports:
+      - "5673:5672"
+      - "15673:15672"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:15673" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5

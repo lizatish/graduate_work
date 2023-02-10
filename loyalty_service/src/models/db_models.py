@@ -1,5 +1,5 @@
-import uuid
 import enum
+import uuid
 
 import sqlalchemy
 from sqlalchemy.dialects.postgresql import UUID
@@ -34,6 +34,9 @@ class DiscountType(enum.Enum):
 
 class UUIDMixin:
     id = sqlalchemy.Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
 
 
 class TimeStampedMixin:

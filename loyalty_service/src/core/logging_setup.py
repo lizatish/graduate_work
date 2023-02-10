@@ -1,4 +1,5 @@
 import logging
+import os
 
 from core.config import get_settings
 
@@ -16,6 +17,10 @@ def setup_root_logger():
     formatter = logging.Formatter(LOG_FORMAT)
     console = logging.StreamHandler()
     console.setFormatter(formatter)
+
+    if not os.path.exists(conf.LOGGER_FILENAME):
+        open(conf.LOGGER_FILENAME, "w").close()
+
     file = logging.handlers.RotatingFileHandler(
         filename=conf.LOGGER_FILENAME, mode=conf.LOGGER_MOD,
         maxBytes=conf.LOGGER_MAXBYTES, backupCount=conf.LOGGER_BACKUP_COUNT
