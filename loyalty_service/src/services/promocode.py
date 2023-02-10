@@ -22,14 +22,17 @@ class PromocodeService:
         self.session = session
 
     async def check_status(self, user_id: uuid, promocode: BasePromocode, action: BaseAction) -> LoyaltyStatus | None:
-        current_status = await self.get_promocode_status(user_id, promocode)
-        if not current_status:
+        promocode_history = await self.get_promocode_status(user_id, promocode)
+
+        if not promocode_history:
             current_status = LoyaltyStatus.not_processed
+        else:
+            current_status = promocode_history[0].promocode_status
 
         if promocode.is_disposable:
             if current_status == discount_mapping[action.value]['current_status']:
                 return discount_mapping[action.value]['required_status']
-        # current_status == 'apply' - возможность многоразового использования промокода 
+        # promocode_history == 'apply' - возможность многоразового использования промокода
         elif current_status == 'apply' or current_status == discount_mapping[action.value]['current_status']:
             return discount_mapping[action.value]['required_status']
         return
@@ -43,8 +46,8 @@ class PromocodeService:
             self, user_id: uuid, promocode: BasePromocode, new_status: LoyaltyStatus, is_personal: bool):
         """Функция для изменения статуса персонального промокода."""
 
-        current_status = await self.get_promocode_status(user_id, promocode)
-        if not current_status:
+        promocode_history = await self.get_promocode_status(user_id, promocode)
+        if not promocode_history:
             current_status = PromocodeHistory(
                 promocode_id=promocode.id,
                 user_id=user_id,
@@ -52,6 +55,7 @@ class PromocodeService:
             )
             self.session.add(current_status)
         else:
+            current_status = promocode_history[0]
             current_status.promocode_status = new_status
         await self.session.commit()
 
@@ -93,9 +97,10 @@ class PromocodeService:
             .where(
                 (PromocodeHistory.user_id == user_id) &
                 (PromocodeHistory.promocode_id == promocode.id)
-
             )
+            .order_by(PromocodeHistory.created_at.desc())
         )
+
         return promocode_history.scalars().all()
 
     async def get_promocodes_history(self, user_id: uuid.UUID) -> list[PromocodeHistory]:

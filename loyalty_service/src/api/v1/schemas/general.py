@@ -30,6 +30,13 @@ class ChangePromocodeStatusResponse(BaseModel):
     action: BaseAction
 
 
+class PromocodeSuccessResponse(BaseModel):
+    """Ответ после удачного изменения статуса промокода."""
+    discount_value: float
+    new_status: LoyaltyStatus
+    label: str
+
+
 discount_mapping = {
     'apply': {
         'current_status': LoyaltyStatus.not_processed,

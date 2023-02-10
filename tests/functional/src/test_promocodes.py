@@ -26,10 +26,11 @@ async def test_change_promocode_status_not_successful(
 
     assert response_body == expected_answer['response']
     assert response.status_code == expected_answer['status']
+
 #
 # @pytest.mark.parametrize(
-#     'request_body, expected_answer', test_change_promocode_expired_data)
-# async def test_change_promocode_expired(
+#     'request_body, expected_answer', test_change_promocode_status_successful_data)
+# async def test_change_promocode_status_successful(
 #         promocodes_api_client: AsyncClient,
 #         request_body: dict,
 #         expected_answer: dict,
@@ -46,6 +47,4 @@ async def test_change_promocode_status_not_successful(
 #     assert response_body == expected_answer['response']
 #     assert response.status_code == expected_answer['status']
 #
-
-# todo в случае успешного применения промокода - возвращать данные промокода - тесты на успех
-# todo тесты на получение истории
+# # todo тесты на получение истории

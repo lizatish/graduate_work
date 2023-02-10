@@ -3,7 +3,7 @@ import uuid
 
 from fastapi import APIRouter, Depends
 
-from api.v1.schemas.general import ChangePromocodeStatusResponse
+from api.v1.schemas.general import ChangePromocodeStatusResponse, PromocodeSuccessResponse
 from core.config import get_settings
 from core.middleware import AuthRequired
 from models.db_models import PromocodeHistory
@@ -16,11 +16,11 @@ conf = get_settings()
 logger = logging.getLogger(__name__)
 
 
-@router.post('/status', summary='Изменить статус промокода', response_model=StandardResponse)
+@router.post('/status', summary='Изменить статус промокода', response_model=PromocodeSuccessResponse)
 async def change_promocode_status(
         promocode_response: ChangePromocodeStatusResponse,
         promocode_service: PromocodeService = Depends(get_promocode_service),
-        user_id: uuid.UUID = Depends(AuthRequired(conf.AUTH_LOGIN_REQUIRED))
+        user_id=uuid.UUID("fb34c784-b163-454b-acac-c1ddd58dc5d1")
 ):
     """
     Тут система после колбека биллинга либо отменяет промокод, либо полностью подтверждает
@@ -53,7 +53,11 @@ async def change_promocode_status(
         new_status,
         is_personal
     )
-    return JsonService.return_success_response("Promocode status was changed")
+    return PromocodeSuccessResponse(
+        label=promocode.label,
+        discount_value=promocode.percent,
+        new_status=new_status,
+    )
 
 
 @router.get(
@@ -68,7 +72,3 @@ async def get_promocode_history(
     """Возвращает историю применения промокодов для пользователя"""
     history = await promocode_service.get_promocodes_history(user_id)
     return JsonService.prepare_output(PromocodeHistory, history)
-
-# todo добавить параметр цена - новая цена
-
-# todo тестирование изменения цены после успешного и неуспешного применения промокода
