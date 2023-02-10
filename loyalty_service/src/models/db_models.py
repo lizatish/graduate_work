@@ -37,8 +37,8 @@ class UUIDMixin:
 
 
 class TimeStampedMixin:
-    created_at = sqlalchemy.Column(sqlalchemy.DateTime(timezone=True), server_default=func.now())
-    expired_at = sqlalchemy.Column(sqlalchemy.DateTime(timezone=True))
+    created_at = sqlalchemy.Column(sqlalchemy.DateTime(), server_default=func.now())
+    expired_at = sqlalchemy.Column(sqlalchemy.DateTime())
 
 
 class BasePromocode(Base, UUIDMixin, TimeStampedMixin):
@@ -58,7 +58,7 @@ class PersonalPromocode(Base, UUIDMixin):
 class PromocodeHistory(Base, UUIDMixin):
     __tablename__ = "promocode_history"
     promocode_id = sqlalchemy.Column(sqlalchemy.ForeignKey("base_promocode.id"))
-    created_at = sqlalchemy.Column(sqlalchemy.DateTime(timezone=True), server_default=func.now())
+    created_at = sqlalchemy.Column(sqlalchemy.DateTime(), server_default=func.now())
     user_id = sqlalchemy.Column(UUID(as_uuid=True))
     promocode_status = sqlalchemy.Column(sqlalchemy.Enum(PromocodeStatus))
 

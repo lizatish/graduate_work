@@ -40,7 +40,7 @@ class DiscountService:
                 )
 
             )
-            .filter(BaseDiscount.expired_at > datetime.now())  # type: ignore
+            .filter(BaseDiscount.expired_at > datetime.utcnow())  # type: ignore
         )
         return discounts.scalars()
 
@@ -95,7 +95,7 @@ class DiscountService:
         discounts = await self.session.execute(
             select(BaseDiscount)
             .where(BaseDiscount.discount_type == discount_type.value)  # type: ignore
-            .filter(BaseDiscount.expired_at > datetime.now())  # type: ignore
+            .filter(BaseDiscount.expired_at > datetime.utcnow())  # type: ignore
         )
         return discounts.scalars()
 
