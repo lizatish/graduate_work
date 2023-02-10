@@ -28,6 +28,8 @@ class Settings(BaseSettings):
 
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+    TESTING: bool = False
+
     class Config:
         """Дополнительные базовые настройки."""
 

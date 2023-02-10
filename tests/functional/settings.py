@@ -30,6 +30,8 @@ class TestSettings(BaseSettings):
 
     BASE_URL: str = 'http://localhost/'
 
+    TESTING: bool = True
+
     class Config:
         """Дополнительные базовые настройки."""
 

@@ -1,18 +1,19 @@
-from functools import lru_cache
-from datetime import datetime
-import uuid
 import logging
+import uuid
+from datetime import datetime
+from functools import lru_cache
 
-from fastapi import Depends
 import sqlalchemy
-from sqlalchemy.exc import IntegrityError
+from fastapi import Depends
 from sqlalchemy import select, or_
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from core.config import get_settings
 from db.db_factory import get_session
-from models.db_models import BaseDiscount, DiscountType, PersonalDiscount, DiscountStatus
 from models.broker_models import DiscountTypeBroker
+from models.common import LoyaltyStatus
+from models.db_models import BaseDiscount, DiscountType, PersonalDiscount
 
 conf = get_settings()
 logger = logging.getLogger()
@@ -34,8 +35,8 @@ class DiscountService:
                 or_(
                     (BaseDiscount.discount_type == DiscountType.all_users),
                     (
-                        (PersonalDiscount.user_id == user_id) &
-                        (PersonalDiscount.discount_status == DiscountStatus.not_processed)
+                            (PersonalDiscount.user_id == user_id) &
+                            (PersonalDiscount.discount_status == LoyaltyStatus.not_processed)
                     )
                 )
 
@@ -45,7 +46,7 @@ class DiscountService:
         return discounts.scalars()
 
     async def change_personal_discount_status(
-            self, discount: PersonalDiscount, required_status: DiscountStatus
+            self, discount: PersonalDiscount, required_status: LoyaltyStatus
     ) -> None:
         """Функция для изменения статуса персональной скидки."""
         discount.discount_status = required_status
@@ -73,7 +74,7 @@ class DiscountService:
         for discount in discounts:
             personal_discounts.append(
                 PersonalDiscount(
-                    discount=discount.id, user_id=user_id, discount_status=DiscountStatus.not_processed  # type: ignore
+                    discount_id=discount.id, user_id=user_id, discount_status=LoyaltyStatus.not_processed
                 )
             )
         self.session.add_all(personal_discounts)

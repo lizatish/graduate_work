@@ -14,7 +14,8 @@ from broker import broker_connection
 from broker.broker_connection import init_broker_connection
 
 conf = get_settings()
-setup_root_logger()
+if not conf.TESTING:
+    setup_root_logger()
 
 
 app = FastAPI(

@@ -1,2 +1,2 @@
-base_discounts_init_data: list[tuple] = []
-personal_discounts_init_data: list[tuple] = []
+base_discounts_init_data: list[dict] = []
+personal_discounts_init_data: list[dict] = []

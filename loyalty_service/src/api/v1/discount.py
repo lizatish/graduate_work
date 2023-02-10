@@ -1,15 +1,15 @@
-import uuid
 import logging
+import uuid
 
 from fastapi import APIRouter, Depends
-from services.discount import get_discount_service, DiscountService
-from core.middleware import AuthRequired
-from core.config import get_settings
-from services.json import JsonService
-from api.v1.schemas.general import Discount, DiscountAction
-from api.v1.utils import discount_mapping
-from models.responses import StandardResponse
 
+from api.v1.schemas.general import Discount, BaseAction
+from api.v1.utils import discount_mapping
+from core.config import get_settings
+from core.middleware import AuthRequired
+from models.responses import StandardResponse
+from services.discount import get_discount_service, DiscountService
+from services.json import JsonService
 
 router = APIRouter()
 conf = get_settings()
@@ -41,7 +41,7 @@ async def discounts_scope(
 
 @router.post('/{action}/{discount_id}', summary='Изменить статус персональной скидки', response_model=StandardResponse)
 async def change_discount_status(
-        action: DiscountAction,
+        action: BaseAction,
         discount_id: uuid.UUID,
         discount_service: DiscountService = Depends(get_discount_service),
         user_id: uuid.UUID = Depends(AuthRequired(conf.AUTH_LOGIN_REQUIRED))
