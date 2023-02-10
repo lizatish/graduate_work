@@ -24,7 +24,7 @@ class Settings(BaseSettings):
     LOGGER_MOD: str = 'a'
     LOGGER_BACKUP_COUNT: int = 5
 
-    BROKER_URL: str = 'amqp://127.0.0.1:5672'
+    BROKER_URL: str = 'amqp://loyalty-rabbit:5672'
 
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
