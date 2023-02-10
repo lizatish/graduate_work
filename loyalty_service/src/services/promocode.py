@@ -33,7 +33,8 @@ class PromocodeService:
             if current_status == discount_mapping[action.value]['current_status']:
                 return discount_mapping[action.value]['required_status']
         # promocode_history == 'apply' - возможность многоразового использования промокода
-        elif current_status == LoyaltyStatus.finished or current_status == discount_mapping[action.value]['current_status']:
+        elif current_status == LoyaltyStatus.finished and action == BaseAction.apply or current_status == \
+                discount_mapping[action.value]['current_status']:
             return discount_mapping[action.value]['required_status']
         return
 
