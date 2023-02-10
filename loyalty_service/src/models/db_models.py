@@ -3,10 +3,8 @@ import uuid
 import sqlalchemy
 from sqlalchemy import UUID
 from sqlalchemy.ext.compiler import compiles
-from sqlalchemy.orm import relationship
 from sqlalchemy.orm.decl_api import DeclarativeMeta, declarative_base
 from sqlalchemy.sql import expression
-from sqlalchemy.sql import func
 from sqlalchemy.types import DateTime
 
 from models.common import PromocodeType, DiscountType, LoyaltyStatus
@@ -49,7 +47,7 @@ class BasePromocode(Base, UUIDMixin, TimeStampedMixin):
     percent = sqlalchemy.Column(sqlalchemy.Float())
     promocode_type = sqlalchemy.Column(sqlalchemy.Enum(PromocodeType))
 
-    personal_promocodes = relationship("PersonalPromocode", lazy="joined")
+    # personal_promocodes = relationship("PersonalPromocode", lazy="joined")
 
 
 class PersonalPromocode(Base, UUIDMixin):
@@ -59,13 +57,15 @@ class PersonalPromocode(Base, UUIDMixin):
     promocode_id = sqlalchemy.Column(sqlalchemy.ForeignKey("base_promocode.id"))
     user_id = sqlalchemy.Column(UUID(as_uuid=True))
 
+    __table_args__ = (sqlalchemy.UniqueConstraint('promocode_id', 'user_id', name='promocode_user'),)
+
 
 class PromocodeHistory(Base, UUIDMixin):
     """Модель истории промокодов."""
 
     __tablename__ = "promocode_history"
     promocode_id = sqlalchemy.Column(sqlalchemy.ForeignKey("base_promocode.id"))
-    created_at = sqlalchemy.Column(sqlalchemy.DateTime(timezone=True), server_default=func.now())
+    created_at = sqlalchemy.Column(sqlalchemy.DateTime(), server_default=utcnow())
     user_id = sqlalchemy.Column(UUID(as_uuid=True))
     promocode_status = sqlalchemy.Column(sqlalchemy.Enum(LoyaltyStatus))
 

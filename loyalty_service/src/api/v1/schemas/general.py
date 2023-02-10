@@ -37,6 +37,13 @@ class PromocodeSuccessResponse(BaseModel):
     label: str
 
 
+class PromocodeHistoryResponce(BaseModel):
+    promocode: str
+    created_at: str
+    user_id: uuid.UUID
+    promocode_status: LoyaltyStatus
+
+
 discount_mapping = {
     'apply': {
         'current_status': LoyaltyStatus.not_processed,

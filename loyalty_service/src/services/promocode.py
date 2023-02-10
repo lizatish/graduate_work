@@ -32,7 +32,7 @@ class PromocodeService:
         if promocode.is_disposable:
             if current_status == discount_mapping[action.value]['current_status']:
                 return discount_mapping[action.value]['required_status']
-        # promocode_history == 'apply' - возможность многоразового использования промокода
+        # current_status ==  LoyaltyStatus.finished and action == BaseAction.apply - возможность многоразового использования промокода
         elif current_status == LoyaltyStatus.finished and action == BaseAction.apply or current_status == \
                 discount_mapping[action.value]['current_status']:
             return discount_mapping[action.value]['required_status']
@@ -65,7 +65,7 @@ class PromocodeService:
 
         query = (select(BasePromocode)
         .join(
-            BasePromocode.personal_promocodes,
+            PersonalPromocode,
             isouter=True
         )
         .where(
@@ -88,11 +88,12 @@ class PromocodeService:
             return None, False
 
         personal = False
-        if promocode.personal_promocodes:
+        if promocode.promocode_type == PromocodeType.personal:
             personal = True
         return promocode, personal
 
     async def get_promocode_status(self, user_id: str, promocode: BasePromocode):
+        """Возвращает историю применения промокодов для конкретного пользователя."""
         promocode_history = await self.session.execute(
             select(PromocodeHistory)
             .where(
@@ -104,15 +105,26 @@ class PromocodeService:
 
         return promocode_history.scalars().all()
 
-    async def get_promocodes_history(self, user_id: uuid.UUID) -> list[PromocodeHistory]:
+    async def get_promocodes_history(self, user_id: uuid.UUID) -> (list[PromocodeHistory], list[BasePromocode]):
         """Возвращает историю применения промокодов для конкретного пользователя."""
         promocode_history = await self.session.execute(
             select(PromocodeHistory)
             .where(
-                (PersonalPromocode.user_id == user_id)
+                (PromocodeHistory.user_id == user_id)
             )
+            .order_by(PromocodeHistory.created_at.desc())
         )
-        return list(promocode_history.scalars().all())
+        history = list(promocode_history.scalars().all())
+        promocodes_id = [history_elem.promocode_id for history_elem in history]
+
+        promocodes_data = await self.session.execute(
+            select(BasePromocode)
+            .filter(BasePromocode.id.in_(promocodes_id))
+        )
+
+        promocodes = list(promocodes_data.scalars().all())
+
+        return history, promocodes
 
 
 @lru_cache()

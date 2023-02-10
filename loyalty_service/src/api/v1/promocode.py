@@ -3,11 +3,9 @@ import uuid
 
 from fastapi import APIRouter, Depends
 
-from api.v1.schemas.general import ChangePromocodeStatusResponse, PromocodeSuccessResponse
+from api.v1.schemas.general import ChangePromocodeStatusResponse, PromocodeSuccessResponse, PromocodeHistoryResponce
 from core.config import get_settings
 from core.middleware import AuthRequired
-from models.db_models import PromocodeHistory
-from models.responses import StandardResponse
 from services.json import JsonService
 from services.promocode import PromocodeService, get_promocode_service
 
@@ -63,12 +61,12 @@ async def change_promocode_status(
 @router.get(
     '/history',
     summary='Получить историю применения промокодов для пользователя',
-    response_model=StandardResponse,
+    response_model=list[PromocodeHistoryResponce],
 )
 async def get_promocode_history(
         promocode_service: PromocodeService = Depends(get_promocode_service),
         user_id: uuid.UUID = Depends(AuthRequired(conf.AUTH_LOGIN_REQUIRED))
 ):
     """Возвращает историю применения промокодов для пользователя"""
-    history = await promocode_service.get_promocodes_history(user_id)
-    return JsonService.prepare_output(PromocodeHistory, history)
+    history, promocodes = await promocode_service.get_promocodes_history(user_id)
+    return JsonService.prepare_history_output(history, promocodes)

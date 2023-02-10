@@ -225,7 +225,7 @@ promocode_history_init_data: list[dict] = [
     {
         "promocode_id": PERSONAL_ID_PROMOCODE_EXPIRED,
         "user_id": SECOND_USER_ID,
-        "created_at": BASE_CREATED_AT_TIME - - datetime.timedelta(days=2),
+        "created_at": BASE_CREATED_AT_TIME - datetime.timedelta(days=2),
         "promocode_status": LoyaltyStatus.finished,
     },
     # общий уже просроченный
@@ -1162,5 +1162,112 @@ tests_apply_promocode_second_many_times_unsuccessful_data = [
                 },
             },
         ]
+    ),
+]
+tests_get_promocode_history_successful_data = [
+    (
+        {
+            "user_id": FIRST_USER_ID,
+        },
+        {
+            'status': HTTPStatus.OK,
+            'response': [
+                {
+                    "promocode": "ASDR456BD",
+                    "created_at": BASE_CREATED_AT_TIME.isoformat(),
+                    "user_id": "845f1722-704f-44eb-bcc5-a329f305b4ec",
+                    "promocode_status": "in_process"
+                },
+                {
+                    "promocode": "KJSDFND12",
+                    "created_at": BASE_CREATED_AT_TIME.isoformat(),
+                    "user_id": "845f1722-704f-44eb-bcc5-a329f305b4ec",
+                    "promocode_status": "in_process"
+                },
+                {
+                    "promocode": "ABRACADAbRA45",
+                    "created_at": (BASE_CREATED_AT_TIME - datetime.timedelta(days=2)).isoformat(),
+                    "user_id": "845f1722-704f-44eb-bcc5-a329f305b4ec",
+                    "promocode_status": "in_process"
+                }
+            ],
+        },
+    ),
+    (
+        {
+            "user_id": SECOND_USER_ID,
+        },
+        {
+            'status': HTTPStatus.OK,
+            'response': [
+                {
+                    "promocode": "123ГUIAD",
+                    "created_at": BASE_CREATED_AT_TIME.isoformat(),
+                    "user_id": "245c63d5-9925-499e-8a21-68b5184b5e81",
+                    "promocode_status": "finished"
+                },
+                {
+                    "promocode": "KIKIMORA23",
+                    "created_at": BASE_CREATED_AT_TIME.isoformat(),
+                    "user_id": "245c63d5-9925-499e-8a21-68b5184b5e81",
+                    "promocode_status": "finished"
+                },
+                {
+                    "promocode": "FGJHBDJ12312",
+                    "created_at": BASE_CREATED_AT_TIME.isoformat(),
+                    "user_id": "245c63d5-9925-499e-8a21-68b5184b5e81",
+                    "promocode_status": "finished"
+                },
+                {
+                    "promocode": "КИНО2020",
+                    "created_at": BASE_CREATED_AT_TIME.isoformat(),
+                    "user_id": "245c63d5-9925-499e-8a21-68b5184b5e81",
+                    "promocode_status": "finished"
+                },
+                {
+                    "promocode": "НОВЫЙГОД2021",
+                    "created_at": (BASE_CREATED_AT_TIME - datetime.timedelta(days=2)).isoformat(),
+                    "user_id": "245c63d5-9925-499e-8a21-68b5184b5e81",
+                    "promocode_status": "finished"
+                },
+                {
+                    "promocode": "ABRACADAbRA45",
+                    "created_at": (BASE_CREATED_AT_TIME - datetime.timedelta(days=2)).isoformat(),
+                    "user_id": "245c63d5-9925-499e-8a21-68b5184b5e81",
+                    "promocode_status": "finished"
+                }
+            ]
+        },
+    ),
+    (
+        {
+            "user_id": ANOTHER_USER_UD,
+        },
+        {
+            'status': HTTPStatus.OK,
+            'response': [
+                {
+                    "promocode": "КИНО2020",
+                    "created_at": BASE_CREATED_AT_TIME.isoformat(),
+                    "user_id": "5735bfc4-d411-4121-995a-89f659c787be",
+                    "promocode_status": "in_process"
+                },
+                {
+                    "promocode": "НОВЫЙГОД2021",
+                    "created_at": BASE_CREATED_AT_TIME.isoformat(),
+                    "user_id": "5735bfc4-d411-4121-995a-89f659c787be",
+                    "promocode_status": "in_process"
+                }
+            ]
+        },
+    ),
+    (
+        {
+            "user_id": NOT_USED_USER_ID,
+        },
+        {
+            'status': HTTPStatus.OK,
+            'response': []
+        },
     ),
 ]

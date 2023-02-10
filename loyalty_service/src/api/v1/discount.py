@@ -36,7 +36,7 @@ async def discounts_scope(
         logger.info('No discounts found for user-"%(user_id)s".', {'user_id': user_id})
         return JsonService.return_not_found('Discounts not found')
     logger.info('Successfully found discounts for the user-"%(user_id)s".', {'user_id': user_id})
-    return prepare_output(Discount, discounts)
+    return JsonService.prepare_output(Discount, discounts)
 
 
 @router.post('/{action}/{discount_id}', summary='Изменить статус персональной скидки', response_model=StandardResponse)
