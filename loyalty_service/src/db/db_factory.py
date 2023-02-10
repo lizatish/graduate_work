@@ -15,7 +15,12 @@ async def init_session():
     global async_session
     global engine
     if not async_session:
-        engine = create_async_engine(conf.DATABASE_URL_ASYNC, echo=False, pool_size=50, max_overflow=0)
+        engine = create_async_engine(
+            conf.DATABASE_URL_ASYNC,
+            echo=False,
+            pool_size=conf.SQLALCHEMY_POOL_SIZE,
+            max_overflow=conf.SQLALCHEMY_MAX_OVERFLOW,
+        )
         async_session = sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
 
 
