@@ -1012,3 +1012,155 @@ test_change_promocode_status_successful_data = [
         },
     ),
 ]
+
+tests_apply_promocode_second_many_times_successful_data = [
+    (
+        [
+            {
+                "user_id": NOT_USED_USER_ID,
+                "content": {
+                    "label": PERSONAL_PROMOCODE_NOT_USED_NOT_DISPOSABLE,
+                    "action": BaseAction.apply.value
+                }
+            },
+            {
+                "user_id": NOT_USED_USER_ID,
+                "content": {
+                    "label": PERSONAL_PROMOCODE_NOT_USED_NOT_DISPOSABLE,
+                    "action": BaseAction.confirm.value
+                }
+            },
+        ],
+        [
+            {
+                'status': HTTPStatus.OK,
+                'response': {
+                    'label': PERSONAL_PROMOCODE_NOT_USED_NOT_DISPOSABLE,
+                    'discount_value': 100,
+                    'new_status': LoyaltyStatus.in_process.value,
+                },
+            },
+            {
+                'status': HTTPStatus.OK,
+                'response': {
+                    'label': PERSONAL_PROMOCODE_NOT_USED_NOT_DISPOSABLE,
+                    'discount_value': 100,
+                    'new_status': LoyaltyStatus.finished.value,
+                },
+            },
+
+        ]
+    ),
+    (
+        [
+            {
+                "user_id": NOT_USED_USER_ID,
+                "content": {
+                    "label": COMMON_PROMOCODE_NOT_USED_NOT_DISPOSABLE,
+                    "action": BaseAction.apply.value
+                }
+            },
+            {
+                "user_id": NOT_USED_USER_ID,
+                "content": {
+                    "label": COMMON_PROMOCODE_NOT_USED_NOT_DISPOSABLE,
+                    "action": BaseAction.confirm.value
+                }
+            },
+        ],
+        [
+            {
+                'status': HTTPStatus.OK,
+                'response': {
+                    'label': COMMON_PROMOCODE_NOT_USED_NOT_DISPOSABLE,
+                    'discount_value': 210,
+                    'new_status': LoyaltyStatus.in_process.value,
+                },
+            },
+            {
+                'status': HTTPStatus.OK,
+                'response': {
+                    'label': COMMON_PROMOCODE_NOT_USED_NOT_DISPOSABLE,
+                    'discount_value': 210,
+                    'new_status': LoyaltyStatus.finished.value,
+                },
+            },
+        ]
+    ),
+]
+
+tests_apply_promocode_second_many_times_unsuccessful_data = [
+    (
+        [
+            {
+                "user_id": NOT_USED_USER_ID,
+                "content": {
+                    "label": PERSONAL_PROMOCODE_NOT_USED_DISPOSABLE,
+                    "action": BaseAction.apply.value
+                }
+            },
+            {
+                "user_id": NOT_USED_USER_ID,
+                "content": {
+                    "label": PERSONAL_PROMOCODE_NOT_USED_DISPOSABLE,
+                    "action": BaseAction.confirm.value
+                }
+            },
+        ],
+        [
+            {
+                'status': HTTPStatus.OK,
+                'response': {
+                    'label': PERSONAL_PROMOCODE_NOT_USED_DISPOSABLE,
+                    'discount_value': 350,
+                    'new_status': LoyaltyStatus.in_process.value,
+                },
+            },
+            {
+                'status': HTTPStatus.OK,
+                'response': {
+                    'label': PERSONAL_PROMOCODE_NOT_USED_DISPOSABLE,
+                    'discount_value': 350,
+                    'new_status': LoyaltyStatus.finished.value,
+                },
+            },
+
+        ]
+    ),
+    (
+        [
+            {
+                "user_id": NOT_USED_USER_ID,
+                "content": {
+                    "label": COMMON_PROMOCODE_NOT_USED_DISPOSABLE,
+                    "action": BaseAction.apply.value
+                }
+            },
+            {
+                "user_id": NOT_USED_USER_ID,
+                "content": {
+                    "label": COMMON_PROMOCODE_NOT_USED_DISPOSABLE,
+                    "action": BaseAction.confirm.value
+                }
+            },
+        ],
+        [
+            {
+                'status': HTTPStatus.OK,
+                'response': {
+                    'label': COMMON_PROMOCODE_NOT_USED_DISPOSABLE,
+                    'discount_value': 1300,
+                    'new_status': LoyaltyStatus.in_process.value,
+                },
+            },
+            {
+                'status': HTTPStatus.OK,
+                'response': {
+                    'label': COMMON_PROMOCODE_NOT_USED_DISPOSABLE,
+                    'discount_value': 1300,
+                    'new_status': LoyaltyStatus.finished.value,
+                },
+            },
+        ]
+    ),
+]
