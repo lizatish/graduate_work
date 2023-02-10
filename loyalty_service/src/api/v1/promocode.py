@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 async def change_promocode_status(
         promocode_response: ChangePromocodeStatusResponse,
         promocode_service: PromocodeService = Depends(get_promocode_service),
-        user_id=uuid.UUID("fb34c784-b163-454b-acac-c1ddd58dc5d1")
+        user_id: uuid.UUID = Depends(AuthRequired(conf.AUTH_LOGIN_REQUIRED))
 ):
     """
     Тут система после колбека биллинга либо отменяет промокод, либо полностью подтверждает

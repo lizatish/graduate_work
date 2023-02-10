@@ -801,3 +801,214 @@ test_change_promocode_status_not_successful_data = [
         },
     ),
 ]
+
+test_change_promocode_status_successful_data = [
+    # Персональные неиспользованные
+    (
+        {
+            "user_id": NOT_USED_USER_ID,
+            "content": {
+                "label": PERSONAL_PROMOCODE_NOT_USED_DISPOSABLE,
+                "action": BaseAction.apply.value
+            }
+        },
+        {
+            'status': HTTPStatus.OK,
+            'response': {
+                'label': PERSONAL_PROMOCODE_NOT_USED_DISPOSABLE,
+                'discount_value': 350,
+                'new_status': LoyaltyStatus.in_process.value,
+            },
+        },
+    ),
+    (
+        {
+            "user_id": NOT_USED_USER_ID,
+            "content": {
+                "label": PERSONAL_PROMOCODE_NOT_USED_NOT_DISPOSABLE,
+                "action": BaseAction.apply.value
+            }
+        },
+        {
+            'status': HTTPStatus.OK,
+            'response': {
+                'label': PERSONAL_PROMOCODE_NOT_USED_NOT_DISPOSABLE,
+                'discount_value': 100,
+                'new_status': LoyaltyStatus.in_process.value,
+            },
+        },
+    ),
+    # Персональные примененные (in_process)
+    (
+        {
+            "user_id": FIRST_USER_ID,
+            "content": {
+                "label": PERSONAL_PROMOCODE_DISPOSABLE,
+                "action": BaseAction.revoke.value
+            }
+        },
+        {
+            'status': HTTPStatus.OK,
+            'response': {
+                'label': PERSONAL_PROMOCODE_DISPOSABLE,
+                'discount_value': 350,
+                'new_status': LoyaltyStatus.not_processed.value,
+            },
+        },
+    ),
+    (
+        {
+            "user_id": FIRST_USER_ID,
+            "content": {
+                "label": PERSONAL_PROMOCODE_DISPOSABLE,
+                "action": BaseAction.confirm.value
+            }
+        },
+        {
+            'status': HTTPStatus.OK,
+            'response': {
+                'label': PERSONAL_PROMOCODE_DISPOSABLE,
+                'discount_value': 350,
+                'new_status': LoyaltyStatus.finished.value,
+            },
+        },
+    ),
+    (
+        {
+            "user_id": FIRST_USER_ID,
+            "content": {
+                "label": PERSONAL_PROMOCODE_NOT_DISPOSABLE,
+                "action": BaseAction.revoke.value
+            }
+        },
+        {
+            'status': HTTPStatus.OK,
+            'response': {
+                'label': PERSONAL_PROMOCODE_NOT_DISPOSABLE,
+                'discount_value': 100,
+                'new_status': LoyaltyStatus.not_processed.value,
+            },
+        },
+    ),
+    (
+        {
+            "user_id": FIRST_USER_ID,
+            "content": {
+                "label": PERSONAL_PROMOCODE_NOT_DISPOSABLE,
+                "action": BaseAction.confirm.value
+            }
+        },
+        {
+            'status': HTTPStatus.OK,
+            'response': {
+                'label': PERSONAL_PROMOCODE_NOT_DISPOSABLE,
+                'discount_value': 100,
+                'new_status': LoyaltyStatus.finished.value,
+            },
+        },
+    ),
+    # Общие неиспользованные
+    (
+        {
+            "user_id": SECOND_USER_ID,
+            "content": {
+                "label": COMMON_PROMOCODE_NOT_USED_DISPOSABLE,
+                "action": BaseAction.apply.value
+            }
+        },
+        {
+            'status': HTTPStatus.OK,
+            'response': {
+                'label': COMMON_PROMOCODE_NOT_USED_DISPOSABLE,
+                'discount_value': 1300,
+                'new_status': LoyaltyStatus.in_process.value,
+            },
+        },
+    ),
+    (
+        {
+            "user_id": SECOND_USER_ID,
+            "content": {
+                "label": COMMON_PROMOCODE_NOT_USED_NOT_DISPOSABLE,
+                "action": BaseAction.apply.value
+            }
+        },
+        {
+            'status': HTTPStatus.OK,
+            'response': {
+                'label': COMMON_PROMOCODE_NOT_USED_NOT_DISPOSABLE,
+                'discount_value': 210,
+                'new_status': LoyaltyStatus.in_process.value,
+            },
+        },
+    ),
+    # Общие в статусе in process
+    (
+        {
+            "user_id": ANOTHER_USER_UD,
+            "content": {
+                "label": COMMON_PROMOCODE_DISPOSABLE,
+                "action": BaseAction.revoke.value
+            }
+        },
+        {
+            'status': HTTPStatus.OK,
+            'response': {
+                'label': COMMON_PROMOCODE_DISPOSABLE,
+                'discount_value': 1300,
+                'new_status': LoyaltyStatus.not_processed.value,
+            },
+        },
+    ),
+    (
+        {
+            "user_id": ANOTHER_USER_UD,
+            "content": {
+                "label": COMMON_PROMOCODE_DISPOSABLE,
+                "action": BaseAction.confirm.value
+            }
+        },
+        {
+            'status': HTTPStatus.OK,
+            'response': {
+                'label': COMMON_PROMOCODE_DISPOSABLE,
+                'discount_value': 1300,
+                'new_status': LoyaltyStatus.finished.value,
+            },
+        },
+    ),
+    (
+        {
+            "user_id": ANOTHER_USER_UD,
+            "content": {
+                "label": COMMON_PROMOCODE_NOT_DISPOSABLE,
+                "action": BaseAction.revoke.value
+            }
+        },
+        {
+            'status': HTTPStatus.OK,
+            'response': {
+                'label': COMMON_PROMOCODE_NOT_DISPOSABLE,
+                'discount_value': 210,
+                'new_status': LoyaltyStatus.not_processed.value,
+            },
+        },
+    ),
+    (
+        {
+            "user_id": ANOTHER_USER_UD,
+            "content": {
+                "label": COMMON_PROMOCODE_NOT_DISPOSABLE,
+                "action": BaseAction.confirm.value
+            }
+        },
+        {
+            'status': HTTPStatus.OK,
+            'response': {
+                'label': COMMON_PROMOCODE_NOT_DISPOSABLE,
+                'discount_value': 210,
+                'new_status': LoyaltyStatus.finished.value,
+            },
+        },
+    ),
+]
