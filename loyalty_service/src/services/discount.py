@@ -74,7 +74,7 @@ class DiscountService:
         for discount in discounts:
             personal_discounts.append(
                 PersonalDiscount(
-                    discount=discount.id, user_id=user_id, discount_status=DiscountStatus.not_processed  # type: ignore
+                    discount_id=discount.id, user_id=user_id, discount_status=LoyaltyStatus.not_processed
                 )
             )
         self.session.add_all(personal_discounts)
