@@ -19,5 +19,4 @@ class Publisher:
 
 config = {'host': 'localhost', 'port': 5672}
 publisher = Publisher(config)
-publisher.publish('registration', {"user_id": "123"})
-publisher.publish('birthday', {"user_id": "321"})
+publisher.publish('discounts', {"user_id": "6bc9c710-d580-4acb-86c4-b28e825ac752", "discount_type": "registration"})

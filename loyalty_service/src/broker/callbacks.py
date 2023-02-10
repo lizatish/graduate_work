@@ -5,23 +5,29 @@ from aio_pika.abc import AbstractIncomingMessage
 from core.config import get_settings
 from services.discount import DiscountService
 from db.db_factory import get_session
+from broker.validator import get_payload
 
 conf = get_settings()
 
 logger = logging.getLogger('')
 
 
-async def callback_registration(
+async def callback_auth_discounts(
         message: AbstractIncomingMessage
 ):
-    logger.info(f"callback_registration message:{message.body}")
-    discount_service = DiscountService(await get_session())
-    test = await discount_service.test()
-    if test:
-        logger.info("test discount success")
-    else:
-        logger.info("test discount fail")
-
-
-async def callback_birthday(message: AbstractIncomingMessage):
-    logger.info(f"callback_birthday message:{message.body}")
+    """Создаёт набор скидок пользователю по переданному типу (например день рождения/регистрация)"""
+    logger.info('callback_auth_discounts message:"%(message)s"', {'message': message.body})
+    discount = get_payload(message)
+    if discount:
+        discount_service = DiscountService(await get_session())
+        is_created = await discount_service.create_personal_discounts(discount.user_id, discount.discount_type)
+        if is_created:
+            logger.info(
+                'Successfully created "%(type)s" discounts for user-"%(user_id)s".',
+                {'user_id': discount.user_id, 'type': discount.discount_type.value}
+            )
+        else:
+            logger.info(
+                'Failed to create "%(type)s" discounts for user-"%(user_id)s" (already exists).',
+                {'user_id': discount.user_id, 'type': discount.discount_type.value}
+            )

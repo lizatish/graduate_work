@@ -7,7 +7,7 @@ from pydantic import BaseSettings
 class Settings(BaseSettings):
     """Настройки приложения."""
 
-    AUTH_SERVICE_HOST: str = '0.0.0.0'
+    AUTH_SERVICE_HOST: str = '127.0.0.1'
     AUTH_SERVICE_PORT: int = 4555
     AUTH_LOGIN_REQUIRED: list[str] = ['STANDARD', 'ADMIN', 'PRIVILEGED']
 
