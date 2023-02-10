@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     APP_HOST: str = '0.0.0.0'
     APP_PORT: int = 6666
 
-    LOGGER_FILENAME: str = "fastapi-elk-stack-logs.json"
+    LOGGER_FILENAME: str = "./app/src/logs/fastapi-elk-stack.json"
     LOGGER_MAXBYTES: int = 15000000
     LOGGER_MOD: str = 'a'
     LOGGER_BACKUP_COUNT: int = 5
