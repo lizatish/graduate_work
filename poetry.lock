@@ -1453,18 +1453,6 @@ files = [
 ]
 
 [[package]]
-name = "split-settings"
-version = "1.0.0"
-description = "Organize Django settings into multiple files and directories. Easily override and modify settings. Use wildcards and optional settings files."
-category = "main"
-optional = false
-python-versions = ">=3.6,<4.0"
-files = [
-    {file = "split_settings-1.0.0-py3-none-any.whl", hash = "sha256:78904bbbaaaa400d9a5ebc4ac316cbd322f8042ee70ecbcfb60b5ddd8adcd2d2"},
-    {file = "split_settings-1.0.0.tar.gz", hash = "sha256:01bf629db64b4fab5d7e78fe3064fee08761f97d382fd38bea87c9772c5ab247"},
-]
-
-[[package]]
 name = "sqlalchemy"
 version = "2.0.3"
 description = "Database Abstraction Library"
@@ -1754,4 +1742,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "b5a3f6c089309c5cde3c789ce25a59b69d8e78ed8e13a8533d3ebe283ab0daae"
+content-hash = "52951e487561f657440cdf6d7854742a062dc9c2e05e5ed8e9e8c3ae7e046048"

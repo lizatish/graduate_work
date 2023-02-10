@@ -12,7 +12,7 @@ down:
 	${DOCKER_COMPOSE_CMD} down -v --remove-orphans
 
 build:
-	DOCKER_BUILDKIT=1 ${DOCKER_COMPOSE_CMD} build --build-arg DEPLOY_TOKEN_NAME=${DEPLOY_TOKEN_NAME} --build-arg DEPLOY_TOKEN=${DEPLOY_TOKEN}
+	DOCKER_BUILDKIT=1 ${DOCKER_COMPOSE_CMD} build
 
 up:
 	${DOCKER_COMPOSE_CMD} up
