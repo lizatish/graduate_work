@@ -28,6 +28,18 @@ services:
       - "5672:5672"
       - "15672:15672"
 
+  admin-panel:
+    depends_on:
+      - loyalty-postgres
+    build:
+      context: admin_panel
+      dockerfile: Dockerfile
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - 8012:8000
+
 volumes:
   loyalty_pgdata:
   rabbitmq_data:
