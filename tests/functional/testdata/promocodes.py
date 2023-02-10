@@ -747,4 +747,57 @@ test_change_promocode_status_not_successful_data = [
             'response': {'detail': 'This promocode can\'t be used because has invalid status'},
         },
     ),
+    # ЧУЖИЕ ПРОМОКОДЫ (попытка использовать не тем пользователем, кому принадлежит промокод)
+    (
+        {
+            "user_id": NOT_USED_USER_ID,
+            "content": {
+                "label": PERSONAL_PROMOCODE_DISPOSABLE,
+                "action": BaseAction.apply.value
+            }
+        },
+        {
+            'status': HTTPStatus.NOT_FOUND,
+            'response': {'detail': 'Promocode not found'},
+        },
+    ),
+    (
+        {
+            "user_id": NOT_USED_USER_ID,
+            "content": {
+                "label": PERSONAL_PROMOCODE_NOT_DISPOSABLE,
+                "action": BaseAction.apply.value
+            }
+        },
+        {
+            'status': HTTPStatus.NOT_FOUND,
+            'response': {'detail': 'Promocode not found'},
+        },
+    ),
+    (
+        {
+            "user_id": NOT_USED_USER_ID,
+            "content": {
+                "label": PERSONAL_PROMOCODE_NOT_DISPOSABLE2,
+                "action": BaseAction.apply.value
+            }
+        },
+        {
+            'status': HTTPStatus.NOT_FOUND,
+            'response': {'detail': 'Promocode not found'},
+        },
+    ),
+    (
+        {
+            "user_id": NOT_USED_USER_ID,
+            "content": {
+                "label": PERSONAL_PROMOCODE_DISPOSABLE2,
+                "action": BaseAction.apply.value
+            }
+        },
+        {
+            'status': HTTPStatus.NOT_FOUND,
+            'response': {'detail': 'Promocode not found'},
+        },
+    ),
 ]
