@@ -31,6 +31,8 @@ class TestSettings(BaseSettings):
     BASE_URL: str = 'http://localhost/'
 
     TESTING: bool = True
+    SQLALCHEMY_POOL_SIZE: int = 200
+    SQLALCHEMY_MAX_OVERFLOW: int = 0
 
     class Config:
         """Дополнительные базовые настройки."""

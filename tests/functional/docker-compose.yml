@@ -1,20 +1,5 @@
 version: '3.3'
 services:
-#  loyalty-tests:
-#    build:
-#      context: ../..
-#      dockerfile: tests/functional/Dockerfile
-#    depends_on:
-#      loyalty-rabbit-tests:
-#        condition: service_healthy
-#      loyalty-postgres-tests:
-#        condition: service_healthy
-#    env_file:
-#      - .env
-#    entrypoint: >
-#      sh -c "pytest tests/functional/src"
-
-
   loyalty-postgres-tests:
     container_name: loyalty-postgres-tests
     image: postgres:13

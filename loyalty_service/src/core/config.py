@@ -30,6 +30,9 @@ class Settings(BaseSettings):
 
     TESTING: bool = False
 
+    SQLALCHEMY_POOL_SIZE: int = 30
+    SQLALCHEMY_MAX_OVERFLOW: int = 0
+
     class Config:
         """Дополнительные базовые настройки."""
 
