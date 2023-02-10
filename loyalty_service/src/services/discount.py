@@ -2,7 +2,6 @@ from functools import lru_cache
 from datetime import datetime
 import uuid
 import logging
-from typing import Optional
 
 from fastapi import Depends
 import sqlalchemy
@@ -29,7 +28,7 @@ class DiscountService:
     async def get_discounts(self, user_id: uuid.UUID) -> sqlalchemy.engine.result.ScalarResult:
         """Функция для получения списка скидок."""
         discounts = await self.session.execute(
-            select(BaseDiscount, PersonalDiscount.discount)
+            select(BaseDiscount, PersonalDiscount.discount_id)
             .outerjoin(PersonalDiscount)
             .where(
                 or_(
@@ -46,27 +45,21 @@ class DiscountService:
         return discounts.scalars()
 
     async def change_personal_discount_status(
-            self, user_id: uuid.UUID, discount_id: uuid.UUID,
-            current_status: DiscountStatus, required_status: DiscountStatus
-    ) -> bool:
-        """Функция для изменения статуса скидки."""
-        discount = await self.get_personal_discount(user_id, discount_id, current_status)
-        if discount:
-            discount.discount_status = required_status
-            await self.session.commit()
-            return True
-        return False
+            self, discount: PersonalDiscount, required_status: DiscountStatus
+    ) -> None:
+        """Функция для изменения статуса персональной скидки."""
+        discount.discount_status = required_status
+        await self.session.commit()
 
     async def get_personal_discount(
-            self, user_id: uuid.UUID, discount_id: uuid.UUID, status: DiscountStatus
-    ) -> Optional[PersonalDiscount]:
+            self, user_id: uuid.UUID, discount_id: uuid.UUID
+    ) -> PersonalDiscount | None:
         """Функция для получения персональной скидки."""
         discount = await self.session.execute(
             select(PersonalDiscount)
             .where(
-                (PersonalDiscount.discount == discount_id) &
-                (PersonalDiscount.user_id == user_id) &
-                (PersonalDiscount.discount_status == status)
+                (PersonalDiscount.discount_id == discount_id) &
+                (PersonalDiscount.user_id == user_id)
             )
         )
         return discount.scalars().first()
@@ -87,8 +80,12 @@ class DiscountService:
         try:
             await self.session.commit()
             return True
-        except IntegrityError as _:
+        except IntegrityError as exc:
             await self.session.rollback()
+            logger.error(
+                'ERROR: Discounts already exists: %(message)s',
+                {'message': exc}
+            )
             return False
 
     async def get_discounts_by_type(

@@ -1,5 +1,5 @@
 from aio_pika import connect, Connection, Channel
-from broker.callbacks import callback_discounts
+from broker.callbacks import callback_auth_discounts
 
 from core.config import get_settings
 
@@ -9,7 +9,7 @@ _connection: Connection | None = None
 _channel: Channel | None = None
 
 BROKER_QUEUE_CALLBACK_DICT: dict = {
-    'discounts': callback_discounts,
+    'auth.discounts': callback_auth_discounts,
 }
 
 

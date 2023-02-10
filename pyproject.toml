@@ -11,6 +11,8 @@ python = "^3.10"
 alembic = "^1.9.2"
 pytest = "^7.2.1"
 Django = "^4.1.6"
+mypy = "^0.991"
+SQLAlchemy = {extras = ["mypy"], version = "^2.0.1"}
 
 [build-system]
 requires = ["poetry-core"]

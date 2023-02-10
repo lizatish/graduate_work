@@ -1,4 +1,5 @@
 import uuid
+import enum
 from datetime import datetime
 
 from pydantic import BaseModel
@@ -14,3 +15,11 @@ class Discount(BaseModel):
     percent: float
     group_product_id: uuid.UUID
     discount_type: DiscountType
+
+
+class DiscountAction(enum.Enum):
+    """Доступные действия над скидкой."""
+
+    apply = 'apply'
+    confirm = 'confirm'
+    revoke = 'revoke'

@@ -11,6 +11,6 @@ class DiscountTypeBroker(enum.Enum):
 
 
 class DiscountBroker(BaseModel):
-    """Модель передачи данных на email-рассылку."""
+    """Модель передачи данных на создание персональных скидок через брокер."""
     user_id: uuid.UUID
     discount_type: DiscountTypeBroker

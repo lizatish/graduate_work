@@ -6,8 +6,8 @@ from services.discount import get_discount_service, DiscountService
 from core.middleware import AuthRequired
 from core.config import get_settings
 from services.json import JsonService
-from api.v1.schemas.general import Discount
-from api.v1.utils import discount_mapping, DiscountAction
+from api.v1.schemas.general import Discount, DiscountAction
+from api.v1.utils import discount_mapping
 from models.responses import StandardResponse
 
 
@@ -57,19 +57,24 @@ async def change_discount_status(
         'User-"%(user_id)s" try to "%(action)s" personal discount-"%(discount_id)s".',
         {'user_id': user_id, 'action': action.value, 'discount_id': discount_id}
     )
-    is_changed = await discount_service.change_personal_discount_status(
-        user_id, discount_id,
-        discount_mapping[action.value]['current_status'],
-        discount_mapping[action.value]['required_status']
-    )
-    if is_changed:
+    discount = await discount_service.get_personal_discount(user_id, discount_id)
+    if not discount:
         logger.info(
-            'Successfully "%(action)s" discount-"%(discount_id)s" by user-"%(user_id)s".',
+            'Failed to "%(action)s" discount-"%(discount_id)s" by user-"%(user_id)s" (Discount not found).',
             {'user_id': user_id, 'action': action.value, 'discount_id': discount_id}
         )
-        return JsonService.return_success_response(discount_mapping[action.value]['successful_message'])
+        return JsonService.return_not_found('Discount not found')
+    if discount.discount_status != discount_mapping[action.value]['current_status']:
+        logger.info(
+            'Failed to "%(action)s" discount-"%(discount_id)s" by user-"%(user_id)s" (Wrong type of discount).',
+            {'user_id': user_id, 'action': action.value, 'discount_id': discount_id}
+        )
+        return JsonService.return_bad_request('Wrong type of discount')
+    await discount_service.change_personal_discount_status(
+        discount, discount_mapping[action.value]['required_status']
+    )
     logger.info(
-        'Failed to "%(action)s" discount-"%(discount_id)s" by user-"%(user_id)s" (Discount not found).',
+        'Successfully "%(action)s" discount-"%(discount_id)s" by user-"%(user_id)s".',
         {'user_id': user_id, 'action': action.value, 'discount_id': discount_id}
     )
-    return JsonService.return_not_found(discount_mapping[action.value]['unsuccessful_message'])
+    return JsonService.return_success_response(discount_mapping[action.value]['successful_message'])
