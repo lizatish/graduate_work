@@ -56,7 +56,7 @@ def upgrade() -> None:
     )
     op.create_table('promocode_history',
     sa.Column('promocode_id', sa.UUID(), nullable=True),
-    sa.Column('created_at', sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=True),
+    sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=True),
     sa.Column('user_id', sa.UUID(), nullable=True),
     sa.Column('promocode_status', sa.Enum('in_process', 'finished', 'not_processed', name='loyaltystatus'), nullable=True),
     sa.Column('id', sa.UUID(), nullable=False),

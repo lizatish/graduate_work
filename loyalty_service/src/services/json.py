@@ -20,6 +20,11 @@ class JsonService:
             zip(promocodes, history)]
 
     @staticmethod
+    def prepare_output(model, items):
+        """Возвращает данные в json формате приведенные к нужной модели."""
+        return [model(**item.__dict__) for item in items]
+
+    @staticmethod
     def promocode_expired():
         """Возвращает ответ пользователю, сообщающий о том, что время действия промокода истекло."""
         raise HTTPException(HTTPStatus.GONE, detail='This promo code has expired')
@@ -44,11 +49,6 @@ class JsonService:
     def return_not_found(message: str) -> dict:
         """Возвращает ответ пользователю, сообщающий об отсутствии элементов"""
         raise HTTPException(HTTPStatus.NOT_FOUND, detail=message)
-
-    @staticmethod
-    def prepare_output(model, items):
-        """Возвращает данные в json формате приведенные к нужной модели."""
-        return [model(**item.__dict__) for item in items]
 
     @staticmethod
     def return_bad_request(message: str) -> dict:

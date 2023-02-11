@@ -12,7 +12,7 @@ LOG_FORMAT = '{"request_id": "%(request_id)s", "asctime": \
 
 def setup_root_logger():
     logger = logging.getLogger('')
-    if (logger.hasHandlers()):
+    if logger.hasHandlers():
         logger.handlers.clear()
     formatter = logging.Formatter(LOG_FORMAT)
     console = logging.StreamHandler()
