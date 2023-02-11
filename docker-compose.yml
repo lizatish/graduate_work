@@ -1,19 +1,75 @@
 version: '3'
 services:
+  elasticsearch:
+    image: elasticsearch:7.17.5
+    container_name: elasticsearch
+    environment:
+      discovery.type: single-node
+    volumes:
+      - /tmp/esdata:/tmp/elasticsearch/data
 
-  loyalty_service:
-    container_name: loyalty_service
+  kibana:
+    image: kibana:7.17.5
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_HOSTS:http://elasticsearch:9200
+    depends_on:
+      - elasticsearch
+
+  filebeat-loyalty:
     build:
-      context: loyalty_service/
-      dockerfile: Dockerfile
+      context: ./filebeat_loyalty
+    container_name: filebeat_loyalty
+    volumes:
+      - loyalty-logs:/var/app/log
+    depends_on:
+      - elasticsearch
+      - kibana
+
+  filebeat-nginx:
+    build:
+      context: ./filebeat_nginx
+    container_name: filebeat_nginx
+    volumes:
+      - /tmp/logs/nginx/:/var/log/nginx/:ro
+    depends_on:
+      - elasticsearch
+      - kibana
+
+  filebeat-auth:
+    build:
+      context: ./filebeat_auth
+    container_name: filebeat_auth
+    volumes:
+      - auth-logs:/var/auth/log
+    depends_on:
+      - elasticsearch
+      - kibana
+
+  loyalty-service:
+    build:
+      context: loyalty_service
+    container_name: loyalty-service
+    env_file:
+      - .env
+    volumes:
+      - loyalty-logs:/opt/app/src/logs
     depends_on:
       - loyalty-postgres
       - loyalty-rabbit
-    env_file:
-      - .env
-    restart: always
+
+  nginx:
+    image: nginx:1.21.3-alpine
     ports:
-      - 6666:6666
+      - 8088:8088
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - /tmp/logs/nginx/:/var/log/nginx/
+    depends_on:
+      - loyalty-service
 
   loyalty-postgres:
     container_name: loyalty-postgres
@@ -47,8 +103,47 @@ services:
     restart: always
     env_file:
       - .env
-    ports:
-      - 8012:8000
+
+  auth_service:
+    container_name: auth_service
+    image: lizatish/auth_service:v0.0.1
+    depends_on:
+      - auth_redis
+      - auth_postgres
+    env_file:
+      - .env
+    restart: always
+    volumes:
+      - auth-logs:/opt/app/src/logs
+
+  auth_redis:
+    container_name: auth_redis
+    image: redis
+    volumes:
+      - auth_redisdata:/data
+    restart: always
+
+  auth_postgres:
+    container_name: auth_postgres
+    image: postgres:13
+    environment:
+      POSTGRES_USER: ${AUTH_POSTGRES_DB_USER}
+      POSTGRES_PASSWORD: ${AUTH_POSTGRES_DB_PASSWORD}
+      POSTGRES_DB: ${AUTH_POSTGRES_DB_NAME}
+    volumes:
+      - auth_pgdata:/var/lib/postgresql/data
+    restart: always
+
+  logstash:
+    image: logstash:7.17.5
+    depends_on:
+      - elasticsearch
+    environment:
+      XPACK_MONITORING_ENABLED: "false"
+      ES_HOST: "elasticsearch:9200"
+    volumes:
+      - ./deploy/logstash.conf:/config/logstash.conf:ro
+    command: logstash -f /config/logstash.conf
 
 volumes:
   loyalty_pgdata:
@@ -56,3 +151,8 @@ volumes:
   rabbitmq_log:
   loyalty-logs:
   nginx-logs:
+  auth_pgdata:
+  auth-logs:
+  auth_redisdata:
+  elasticsearch_data:
+    driver: local
