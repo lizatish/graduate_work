@@ -2,12 +2,26 @@ import enum
 import uuid
 from datetime import datetime
 
+import orjson
 from pydantic import BaseModel
 
 from models.common import LoyaltyStatus, DiscountType
 
 
-class Discount(BaseModel):
+def orjson_dumps(v, *, default) -> str:
+    """Перевод в байты через orjson."""
+    return orjson.dumps(v, default=default).decode()
+
+
+class OrjsonBase(BaseModel):
+    """Базовая основа для сериализации и десериализации через orjson."""
+
+    class Config:
+        json_loads = orjson.loads
+        json_dumps = orjson_dumps
+
+
+class Discount(OrjsonBase):
     """Схема скидки."""
 
     id: uuid.UUID
@@ -25,19 +39,24 @@ class BaseAction(enum.Enum):
     apply = 'apply'
 
 
-class ChangePromocodeStatusResponse(BaseModel):
+class ChangePromocodeStatusRequest(OrjsonBase):
+    """Запрос на изменения статуса промокода."""
+
     label: str
     action: BaseAction
 
 
-class PromocodeSuccessResponse(BaseModel):
+class PromocodeSuccessResponse(OrjsonBase):
     """Ответ после удачного изменения статуса промокода."""
+
     discount_value: float
     new_status: LoyaltyStatus
     label: str
 
 
-class PromocodeHistoryResponce(BaseModel):
+class PromocodeHistoryResponce(OrjsonBase):
+    """Ответ после получения истории промокодов."""
+
     promocode: str
     created_at: str
     user_id: uuid.UUID

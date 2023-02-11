@@ -3,6 +3,7 @@ import uuid
 import sqlalchemy
 from sqlalchemy import UUID
 from sqlalchemy.ext.compiler import compiles
+from sqlalchemy.orm import relationship
 from sqlalchemy.orm.decl_api import DeclarativeMeta, declarative_base
 from sqlalchemy.sql import expression
 from sqlalchemy.types import DateTime
@@ -47,27 +48,42 @@ class BasePromocode(Base, UUIDMixin, TimeStampedMixin):
     percent = sqlalchemy.Column(sqlalchemy.Float())
     promocode_type = sqlalchemy.Column(sqlalchemy.Enum(PromocodeType))
 
-    # personal_promocodes = relationship("PersonalPromocode", lazy="joined")
+    personal_promocodes = relationship(
+        "PersonalPromocode",
+        back_populates="promocode",
+        cascade="all, delete",
+        passive_deletes=True,
+    )
+    promocode_history = relationship(
+        "PromocodeHistory",
+        back_populates="promocode",
+        cascade="all, delete",
+        passive_deletes=True,
+    )
 
 
 class PersonalPromocode(Base, UUIDMixin):
     """Модель персональных промокодов."""
 
     __tablename__ = "personal_promocode"
-    promocode_id = sqlalchemy.Column(sqlalchemy.ForeignKey("base_promocode.id"))
+    __table_args__ = (sqlalchemy.UniqueConstraint('promocode_id', 'user_id', name='promocode_user'),)
+
+    promocode_id = sqlalchemy.Column(sqlalchemy.ForeignKey("base_promocode.id", ondelete="CASCADE"), nullable=False)
     user_id = sqlalchemy.Column(UUID(as_uuid=True))
 
-    __table_args__ = (sqlalchemy.UniqueConstraint('promocode_id', 'user_id', name='promocode_user'),)
+    promocode = relationship("BasePromocode", back_populates="personal_promocodes")
 
 
 class PromocodeHistory(Base, UUIDMixin):
     """Модель истории промокодов."""
 
     __tablename__ = "promocode_history"
-    promocode_id = sqlalchemy.Column(sqlalchemy.ForeignKey("base_promocode.id"))
+    promocode_id = sqlalchemy.Column(sqlalchemy.ForeignKey("base_promocode.id", ondelete="CASCADE"), nullable=False)
     created_at = sqlalchemy.Column(sqlalchemy.DateTime(), server_default=utcnow())
     user_id = sqlalchemy.Column(UUID(as_uuid=True))
     promocode_status = sqlalchemy.Column(sqlalchemy.Enum(LoyaltyStatus))
+
+    promocode = relationship("BasePromocode", back_populates="promocode_history")
 
 
 class BaseDiscount(Base, UUIDMixin, TimeStampedMixin):
@@ -78,13 +94,22 @@ class BaseDiscount(Base, UUIDMixin, TimeStampedMixin):
     group_product_id = sqlalchemy.Column(UUID(as_uuid=True))
     discount_type = sqlalchemy.Column(sqlalchemy.Enum(DiscountType))
 
+    personal_discounts = relationship(
+        "PersonalDiscount",
+        back_populates="discount",
+        cascade="all, delete",
+        passive_deletes=True,
+    )
+
 
 class PersonalDiscount(Base, UUIDMixin):
     """Модель персональных скидок."""
 
     __tablename__ = "personal_discount"
-    discount_id = sqlalchemy.Column(sqlalchemy.ForeignKey("base_discount.id"))
+    __table_args__ = (sqlalchemy.UniqueConstraint('discount_id', 'user_id', name='discount_user'),)
+
+    discount_id = sqlalchemy.Column(sqlalchemy.ForeignKey("base_discount.id", ondelete="CASCADE"), nullable=False)
     user_id = sqlalchemy.Column(UUID(as_uuid=True))
     discount_status = sqlalchemy.Column(sqlalchemy.Enum(LoyaltyStatus))
 
-    __table_args__ = (sqlalchemy.UniqueConstraint('discount_id', 'user_id', name='discount_user'),)
+    discount = relationship("BaseDiscount", back_populates="personal_discounts")

@@ -3,7 +3,7 @@ import uuid
 
 from fastapi import APIRouter, Depends
 
-from api.v1.schemas.general import ChangePromocodeStatusResponse, PromocodeSuccessResponse, PromocodeHistoryResponce
+from api.v1.schemas.general import ChangePromocodeStatusRequest, PromocodeSuccessResponse, PromocodeHistoryResponce
 from core.config import get_settings
 from core.middleware import AuthRequired
 from services.json import JsonService
@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 
 @router.post('/status', summary='Изменить статус промокода', response_model=PromocodeSuccessResponse)
 async def change_promocode_status(
-        promocode_response: ChangePromocodeStatusResponse,
+        promocode_response: ChangePromocodeStatusRequest,
         promocode_service: PromocodeService = Depends(get_promocode_service),
         user_id: uuid.UUID = Depends(AuthRequired(conf.AUTH_LOGIN_REQUIRED))
 ):
